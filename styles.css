@@ -394,6 +394,48 @@ section {
 
 .project-info p {
     font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.btn-small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: var(--accent-color);
+    color: #121212;
+    transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+    transform: translateY(-2px);
+    background-color: var(--accent-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--muted-text);
+    color: var(--muted-text);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background-color: rgba(252, 163, 17, 0.05);
+}
+
+.btn-outline i {
+    font-size: 1rem;
 }
 
 /* Footer */
