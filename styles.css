@@ -231,6 +231,48 @@ section {
     padding: 6rem 0;
 }
 
+/* Value Proposition Section */
+.text-block-section {
+    background-color: #1a1a1a;
+    /* Slightly different from main bg */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.value-prop-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.value-prop-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--accent-color);
+    /* Highlight the powerful title */
+}
+
+/* Override underline for this specific h2 if preferred, or keep it. 
+   Let's keep it but make sure color matches. */
+.value-prop-content h2::after {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Subtler underline */
+}
+
+.highlight-text {
+    font-size: 1.25rem;
+    color: #ffffff;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.value-prop-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--muted-text);
+}
+
 /* About Section */
 .about-grid {
     display: flex;
