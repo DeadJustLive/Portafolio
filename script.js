@@ -27,7 +27,38 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: offsetPosition,
                     behavior: "smooth"
                 });
-            }
+            });
+    }
         });
     });
+
+// --- Profile Flip Card Logic ---
+const flipCard = document.getElementById('profileFlipCard');
+let isPaused = false;
+let autoFlipInterval;
+
+// Toggle on Click
+flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('flipped');
+});
+
+// Pause on Hover
+flipCard.addEventListener('mouseenter', () => {
+    isPaused = true;
+});
+
+flipCard.addEventListener('mouseleave', () => {
+    isPaused = false;
+});
+
+// Auto Flip Mechanism
+function startAutoFlip() {
+    autoFlipInterval = setInterval(() => {
+        if (!isPaused) {
+            flipCard.classList.toggle('flipped');
+        }
+    }, 8000); // 8 seconds
+}
+
+startAutoFlip();
 });
