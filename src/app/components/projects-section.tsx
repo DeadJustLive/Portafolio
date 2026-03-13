@@ -5,7 +5,7 @@ import { ExternalLink, Layers, Server, Smartphone, Database, CheckCircle2, Play 
 
 import { DailyBiteDemo } from './demos/DailyBiteDemo';
 import { StockSimpleDemo } from './demos/StockSimpleDemo';
-import { MarceDemo } from './demos/MarceDemo';
+import { SaaSDemo } from './demos/SaaSDemo';
 import { AppDemoModal } from './demos/AppDemoModal';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -50,23 +50,23 @@ const projects = [
     demoComponent: <StockSimpleDemo />
   },
   {
-    id: 'marcesaas',
-    title: 'Marce Autoescuela SaaS',
-    subtitle: 'E-commerce Checkout y Pedidos',
-    description: 'Plataforma frontend híbrida que orquesta un flujo complejo de checkout (datos, métodos de envío, fidelización) simulando una experiencia de compra unificada y responsiva.',
+    id: 'saastemplate',
+    title: 'SaaS Dashboard Template',
+    subtitle: 'Plantilla de Sistema de Gestión SaaS',
+    description: 'Plantilla de interfaz SaaS de alto rendimiento con dashboard de métricas, gestión de usuarios, planes de suscripción y configuración avanzada. Diseñada para ser base de cualquier sistema de gestión empresarial.',
     tech: [
       { name: 'React', icon: <Layers className="w-4 h-4" /> },
-      { name: 'Framer Motion', icon: <Layers className="w-4 h-4" /> },
-      { name: 'Supabase', icon: <Database className="w-4 h-4" /> }
+      { name: 'Tailwind CSS', icon: <Layers className="w-4 h-4" /> },
+      { name: 'TypeScript', icon: <Server className="w-4 h-4" /> }
     ],
     color: 'from-purple-500/20 to-pink-600/20',
     borderColor: 'border-purple-500/30',
     highlights: [
-      'Proceso de checkout multi-step dinámico',
-      'Integración PWA progresiva',
-      'Animaciones de transición de contexto'
+      'Dashboard con métricas clave en tiempo real',
+      'Sistema de roles y gestión de usuarios',
+      'Onboarding y planes de suscripción integrados'
     ],
-    demoComponent: <MarceDemo />
+    demoComponent: <SaaSDemo />
   }
 ];
 
@@ -202,6 +202,8 @@ export function ProjectsSection() {
           isOpen={!!activeDemoId}
           onClose={() => setActiveDemoId(null)}
           title={`Simulando: ${activeProject.title}`}
+          mobileOnly={activeProject.id === 'stocksimple' || activeProject.id === 'dailybite'}
+          forceWide={activeProject.id === 'saastemplate'}
         >
           {activeProject.demoComponent}
         </AppDemoModal>

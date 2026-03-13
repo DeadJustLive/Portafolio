@@ -1,164 +1,261 @@
-import { useState } from 'react';
-import { ShoppingCart, LayoutGrid, Package, Settings, Truck, CreditCard, User, LogOut, Search, Menu, CheckCircle2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ShoppingCart, LayoutGrid, Package, Settings, Search, Menu, CheckCircle2, ChevronRight, Store, Smartphone, Loader2, ArrowRightLeft, User, Bell } from 'lucide-react';
+import { toast } from 'sonner';
 
 export function MarceDemo() {
-    const [activeTab, setActiveTab] = useState<'kiosk' | 'web'>('web');
-    const [theme, setTheme] = useState<'light' | 'dark' | 'brand'>('dark');
+    const [viewMode, setViewMode] = useState<'client' | 'admin'>('client');
+    const [isSaving, setIsSaving] = useState(false);
 
-    const themeClasses = {
-        light: 'bg-white text-slate-800 border-slate-200',
-        dark: 'bg-slate-900 text-white border-slate-700',
-        brand: 'bg-rose-950 text-rose-50 border-rose-800'
+    // Shared State between Admin and Client
+    const [productStock, setProductStock] = useState(5);
+    const [productPrice, setProductPrice] = useState(1200);
+    const [tempPrice, setTempPrice] = useState('1200');
+
+    // Sync input when props change externally (though here it's all local)
+    useEffect(() => {
+        setTempPrice(productPrice.toString());
+    }, [productPrice]);
+
+    const handleUpdateStock = (change: number) => {
+        setIsSaving(true);
+        setTimeout(() => {
+            setProductStock(prev => Math.max(0, prev + change));
+            setIsSaving(false);
+            toast.success('Stock actualizado en tiempo real');
+        }, 600);
     };
 
-    const accentClasses = {
-        light: 'bg-rose-500 text-white',
-        dark: 'bg-rose-600 text-white',
-        brand: 'bg-rose-500 text-white'
+    const handleUpdatePrice = () => {
+        setIsSaving(true);
+        setTimeout(() => {
+            setProductPrice(Number(tempPrice));
+            setIsSaving(false);
+            toast.success('Precio guardado y publicado en la tienda');
+        }, 800);
+    };
+
+    const handleAddToCart = () => {
+        if (productStock > 0) {
+            toast.success('Producto agregado al carrito');
+        } else {
+            toast.error('Producto sin stock disponible');
+        }
     };
 
     return (
-        <div className="w-full h-full flex flex-col relative bg-slate-950/50 rounded-b-[2rem] overflow-hidden">
-            {/* Controls Bar */}
-            <div className="absolute top-4 right-4 z-50 flex gap-2">
-                <div className="flex bg-black/40 backdrop-blur-md rounded-full p-1 border border-white/10">
+        <div className="w-full h-full flex flex-col relative bg-slate-100 overflow-hidden font-sans">
+
+            {/* Viewport Toggle Switcher */}
+            <div className="absolute top-6 left-1/2 -translate-x-1/2 z-50">
+                <div className="bg-white p-1.5 rounded-full shadow-lg border border-slate-200 flex items-center gap-1">
                     <button
-                        onClick={() => setTheme('light')}
-                        className={`w-6 h-6 rounded-full transition-all ${theme === 'light' ? 'bg-white scale-110 shadow-lg' : 'bg-slate-300 opacity-50 hover:opacity-100'}`}
-                        title="Tema Claro"
-                    />
+                        onClick={() => setViewMode('client')}
+                        className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all cursor-pointer ${viewMode === 'client' ? 'bg-rose-50 text-rose-600 shadow-sm' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
+                    >
+                        <Store className="w-4 h-4" /> Tienda Web
+                    </button>
+                    <div className="w-6 flex justify-center text-slate-300">
+                        <ArrowRightLeft className="w-4 h-4" />
+                    </div>
                     <button
-                        onClick={() => setTheme('dark')}
-                        className={`w-6 h-6 rounded-full ml-1 transition-all ${theme === 'dark' ? 'bg-slate-800 border border-slate-600 scale-110 shadow-lg' : 'bg-slate-700 opacity-50 hover:opacity-100'}`}
-                        title="Tema Oscuro"
-                    />
-                    <button
-                        onClick={() => setTheme('brand')}
-                        className={`w-6 h-6 rounded-full ml-1 transition-all ${theme === 'brand' ? 'bg-rose-900 border border-rose-500 scale-110 shadow-lg' : 'bg-rose-900 opacity-50 hover:opacity-100'}`}
-                        title="Tema Marca"
-                    />
+                        onClick={() => setViewMode('admin')}
+                        className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all cursor-pointer ${viewMode === 'admin' ? 'bg-indigo-50 text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
+                    >
+                        <Smartphone className="w-4 h-4" /> App SaaS
+                    </button>
                 </div>
             </div>
 
-            <div className="flex-1 flex w-full h-full p-6 gap-6 items-center justify-center">
+            {/* Main Content Area */}
+            <div className="flex-1 w-full h-full relative overflow-hidden flex items-center justify-center pt-20 pb-4">
 
-                {/* Mobile App Standin (Admin/Kiosk Context) */}
-                <div className={`w-[280px] h-[500px] shrink-0 rounded-[2.5rem] border-8 shadow-2xl relative overflow-hidden flex flex-col transition-colors duration-500 ${themeClasses[theme]} border-black/80`}>
-                    {/* Notch */}
-                    <div className="absolute top-0 inset-x-0 h-6 bg-black/80 rounded-b-xl w-32 mx-auto z-20" />
-
-                    {/* App Header */}
-                    <div className={`pt-10 pb-4 px-5 flex justify-between items-center border-b transition-colors duration-500 ${theme === 'light' ? 'border-slate-100' : 'border-white/10'}`}>
-                        <div className="flex items-center gap-2">
-                            <Menu className="w-5 h-5 opacity-70" />
-                            <span className="font-bold text-lg">Pedidos App</span>
-                        </div>
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center ${accentClasses[theme]}`}>
-                            <Package className="w-4 h-4" />
-                        </div>
-                    </div>
-
-                    {/* App Content (Active Orders) */}
-                    <div className="flex-1 p-4 space-y-4 overflow-y-auto no-scrollbar">
-                        <div className="text-xs font-bold uppercase tracking-wider opacity-50 mb-2">Para preparar</div>
-
-                        <div className={`p-4 rounded-2xl border transition-colors duration-500 ${theme === 'light' ? 'bg-white shadow-sm border-slate-100' : 'bg-white/5 border-white/5'}`}>
-                            <div className="flex justify-between items-start mb-2">
-                                <span className="font-bold">#ORD-089</span>
-                                <span className={`text-[10px] px-2 py-1 rounded font-bold ${accentClasses[theme]}`}>NUEVO</span>
+                {/* -------------------- CLIENT VIEW (WEB TIENDA) -------------------- */}
+                <div className={`absolute inset-4 sm:inset-8 transition-all duration-700 ease-in-out transform ${viewMode === 'client' ? 'opacity-100 translate-y-0 scale-100 z-10' : 'opacity-0 translate-y-12 scale-95 pointer-events-none z-0'}`}>
+                    <div className="w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-slate-200">
+                        {/* Browser Bar */}
+                        <div className="h-12 bg-slate-100 border-b border-slate-200 flex items-center px-4 shrink-0">
+                            <div className="flex gap-1.5 mr-4">
+                                <div className="w-3 h-3 rounded-full bg-rose-400" />
+                                <div className="w-3 h-3 rounded-full bg-amber-400" />
+                                <div className="w-3 h-3 rounded-full bg-emerald-400" />
                             </div>
-                            <div className="text-sm opacity-70 mb-3">Retiro en Domicilio • 3 items</div>
-                            <button className={`w-full py-2 rounded-xl text-sm font-semibold transition-colors duration-500 ${accentClasses[theme]}`}>
-                                Preparar
-                            </button>
-                        </div>
-
-                        <div className={`p-4 rounded-2xl border transition-colors duration-500 ${theme === 'light' ? 'bg-slate-50 border-slate-100' : 'bg-black/20 border-white/5'}`}>
-                            <div className="flex justify-between items-start mb-2">
-                                <span className="font-bold opacity-70">#ORD-088</span>
-                                <span className="text-[10px] px-2 py-1 rounded font-bold bg-amber-500/20 text-amber-500">PAGO PENDIENTE</span>
+                            <div className="flex-1 max-w-lg mx-auto bg-white h-7 rounded px-3 flex items-center text-xs text-slate-400 border border-slate-200 justify-center font-medium shadow-sm">
+                                https://tienda.dulcesmarce.cl/producto/alfajor-milka
                             </div>
-                            <div className="text-sm opacity-50">Starken • 1 item</div>
                         </div>
-                    </div>
 
-                    {/* Mobile Nav */}
-                    <div className={`h-16 border-t flex justify-around items-center px-2 transition-colors duration-500 ${theme === 'light' ? 'border-slate-100 bg-white' : 'border-white/10 bg-black/20'}`}>
-                        <LayoutGrid className={`w-6 h-6 ${theme === 'light' ? 'text-rose-500' : 'text-rose-400'}`} />
-                        <Search className="w-6 h-6 opacity-40" />
-                        <Settings className="w-6 h-6 opacity-40" />
+                        {/* Web Content */}
+                        <div className="flex-1 overflow-y-auto w-full flex flex-col pt-10">
+                            <div className="max-w-4xl mx-auto w-full px-8 pb-16 flex flex-col md:flex-row gap-12">
+                                {/* Product Image Mock */}
+                                <div className="w-full md:w-1/2 aspect-square bg-rose-50 rounded-3xl border-2 border-dashed border-rose-200 flex items-center justify-center relative overflow-hidden group">
+                                    <div className="w-48 h-48 bg-white rounded-full shadow-2xl flex items-center justify-center text-rose-300">
+                                        <Package className="w-20 h-20" />
+                                    </div>
+                                    {productStock === 0 && (
+                                        <div className="absolute inset-0 bg-white/60 backdrop-blur-sm flex items-center justify-center z-10">
+                                            <div className="bg-slate-900 text-white font-black text-2xl px-8 py-4 rounded-xl rotate-[-10deg] shadow-2xl border-4 border-slate-800">
+                                                AGOTADO
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Product Info */}
+                                <div className="w-full md:w-1/2 flex flex-col justify-center">
+                                    <div className="text-xs font-bold text-rose-500 tracking-wider uppercase mb-3">Golosinas Premium</div>
+                                    <h1 className="text-4xl font-black text-slate-900 mb-4 leading-tight">Alfajor Triple Milka Dulce de Leche</h1>
+
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <div className="text-3xl font-bold text-slate-800">${productPrice.toLocaleString('es-CL')}</div>
+                                        {productStock > 0 ? (
+                                            <div className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold flex items-center gap-1">
+                                                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                                                Stock Disponible ({productStock})
+                                            </div>
+                                        ) : (
+                                            <div className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold flex items-center gap-1">
+                                                <div className="w-2 h-2 bg-red-500 rounded-full" />
+                                                Sin Stock
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <p className="text-slate-500 leading-relaxed mb-8">
+                                        Delicioso alfajor relleno con el más suave dulce de leche, bañado en el inconfundible chocolate Milka con leche alpina. El bocadillo perfecto para acompañar tu café o darte un gusto a cualquier hora.
+                                    </p>
+
+                                    <button
+                                        onClick={handleAddToCart}
+                                        disabled={productStock === 0}
+                                        className={`w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all cursor-pointer ${productStock > 0 ? 'bg-rose-500 text-white shadow-xl shadow-rose-500/30 hover:bg-rose-600 hover:scale-[1.02]' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}
+                                    >
+                                        <ShoppingCart className="w-5 h-5" />
+                                        {productStock > 0 ? 'Agregar al Carrito' : 'No Disponible'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Web View Standin (E-commerce Checkout) */}
-                <div className={`flex-1 max-w-[500px] h-[500px] rounded-xl shadow-2xl relative overflow-hidden flex flex-col transition-colors duration-500 ${themeClasses[theme]} border ${theme === 'light' ? 'border-slate-200' : 'border-white/10'}`}>
-                    {/* Browser Header */}
-                    <div className={`h-10 flex items-center px-4 gap-2 border-b transition-colors duration-500 ${theme === 'light' ? 'bg-slate-100 border-slate-200' : 'bg-black/40 border-white/10'}`}>
-                        <div className="flex gap-1.5">
-                            <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-amber-400/80" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-                        </div>
-                        <div className={`flex-1 mx-4 h-6 rounded bg-black/10 flex items-center justify-center text-[10px] opacity-50`}>
-                            tienda.dulcesmarce.cl/checkout
-                        </div>
-                    </div>
 
-                    {/* Web Content */}
-                    <div className="flex-1 p-8 overflow-y-auto">
-                        <div className="flex justify-between items-end mb-8">
-                            <h1 className="text-2xl font-bold">Finalizar Compra</h1>
-                            <div className="flex gap-2 text-sm font-semibold opacity-50">
-                                <span className={`${theme === 'light' ? 'text-rose-500 opacity-100' : 'text-rose-400 opacity-100'}`}>1. Datos</span>
-                                <span>—</span>
-                                <span>2. Pago</span>
-                            </div>
-                        </div>
+                {/* -------------------- ADMIN VIEW (SAAS APP) -------------------- */}
+                <div className={`transition-all duration-700 ease-in-out transform ${viewMode === 'admin' ? 'opacity-100 translate-y-0 scale-100 z-10' : 'opacity-0 translate-y-12 scale-95 pointer-events-none absolute z-0'}`}>
+                    {/* Mobile Phone Frame Wrapper */}
+                    <div className="w-[320px] h-[600px] bg-slate-900 rounded-[3rem] p-3 shadow-2xl relative border-slate-800 border-2">
+                        {/* Hardware Buttons */}
+                        <div className="absolute top-24 -left-[3px] w-[3px] h-12 bg-slate-700 rounded-l-md" />
+                        <div className="absolute top-40 -left-[3px] w-[3px] h-12 bg-slate-700 rounded-l-md" />
+                        <div className="absolute top-32 -right-[3px] w-[3px] h-16 bg-slate-700 rounded-r-md" />
 
-                        <div className="space-y-6">
-                            {/* Simulated Form */}
-                            <div className={`p-5 rounded-2xl border transition-colors duration-500 ${theme === 'light' ? 'bg-slate-50 border-slate-200' : 'bg-black/20 border-white/5'}`}>
-                                <div className="flex items-center gap-3 mb-4">
-                                    <User className="w-5 h-5 opacity-70" />
-                                    <h2 className="font-semibold">Información Personal</h2>
-                                </div>
-                                <div className="space-y-3">
-                                    <div className={`h-10 rounded-lg border flex items-center px-3 text-sm opacity-50 transition-colors duration-500 ${theme === 'light' ? 'bg-white border-slate-200' : 'bg-black/20 border-white/10'}`}>Nombre Completo</div>
-                                    <div className="grid grid-cols-2 gap-3">
-                                        <div className={`h-10 rounded-lg border flex items-center px-3 text-sm opacity-50 transition-colors duration-500 ${theme === 'light' ? 'bg-white border-slate-200' : 'bg-black/20 border-white/10'}`}>RUT</div>
-                                        <div className={`h-10 rounded-lg border flex items-center px-3 text-sm opacity-50 transition-colors duration-500 ${theme === 'light' ? 'bg-white border-slate-200' : 'bg-black/20 border-white/10'}`}>Teléfono</div>
-                                    </div>
-                                </div>
-                            </div>
+                        {/* Screen */}
+                        <div className="w-full h-full bg-slate-50 rounded-[2.25rem] overflow-hidden flex flex-col relative">
+                            {/* Dynamic Island / Notch Mock */}
+                            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-30" />
 
-                            {/* Delivery Options */}
-                            <div className="space-y-3">
-                                <div className={`p-4 rounded-xl border-2 flex justify-between items-center cursor-pointer transition-colors duration-500 ${theme === 'light' ? 'border-rose-500 bg-rose-50' : 'border-rose-500 bg-rose-500/10'}`}>
+                            {/* App Header */}
+                            <div className="bg-indigo-600 pt-12 pb-6 px-6 rounded-b-3xl shadow-lg relative z-20 shrink-0">
+                                <div className="flex justify-between items-center mb-6 text-white">
                                     <div className="flex items-center gap-3">
-                                        <div className={`w-4 h-4 rounded-full border-4 ${theme === 'light' ? 'border-rose-500 bg-white' : 'border-rose-500 bg-transparent'}`} />
+                                        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                            <Store className="w-5 h-5" />
+                                        </div>
                                         <div>
-                                            <div className="font-bold">Retiro en Domicilio</div>
-                                            <div className="text-xs opacity-70">Gratis - Coordina por Whatsapp</div>
+                                            <h1 className="font-bold text-base leading-tight">Marce Admin</h1>
+                                            <p className="text-[10px] text-indigo-200">Panel de Control</p>
                                         </div>
                                     </div>
-                                    <span className="font-bold text-rose-500">$0</span>
+                                    <button className="p-2 bg-indigo-700/50 rounded-full hover:bg-indigo-700 transition">
+                                        <Bell className="w-5 h-5" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* App Content */}
+                            <div className="flex-1 overflow-y-auto px-5 py-6 space-y-5 -mt-4 relative z-10">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <Package className="w-5 h-5 text-slate-400" />
+                                    <h2 className="font-bold text-slate-700">Edición Rápida</h2>
                                 </div>
 
-                                <div className={`p-4 rounded-xl border flex justify-between items-center opacity-50 transition-colors duration-500 ${theme === 'light' ? 'border-slate-200 bg-white' : 'border-white/10 bg-transparent'}`}>
-                                    <div className="flex items-center gap-3">
-                                        <div className={`w-4 h-4 rounded-full border-2 ${theme === 'light' ? 'border-slate-300' : 'border-slate-600'}`} />
+                                {/* Active Editing Product Card */}
+                                <div className="bg-white rounded-2xl p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
+                                    <div className="flex gap-4 mb-5">
+                                        <div className="w-16 h-16 bg-indigo-50 rounded-xl border border-indigo-100 flex items-center justify-center text-indigo-300">
+                                            <Package className="w-8 h-8" />
+                                        </div>
                                         <div>
-                                            <div className="font-bold">Envío Starken</div>
-                                            <div className="text-xs">Por pagar en destino</div>
+                                            <h3 className="font-bold text-slate-800 text-sm mb-1 leading-tight">Alfajor Triple Milka Dulce de Leche</h3>
+                                            <p className="text-[10px] text-slate-400 font-medium">SKU: MILKA-TRIPLE-01</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        {/* Stock Control */}
+                                        <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 flex items-center justify-between">
+                                            <div>
+                                                <p className="text-xs font-bold text-slate-500 uppercase">Stock Actual</p>
+                                                <p className="font-black text-xl text-slate-800">{productStock}</p>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <button
+                                                    onClick={() => handleUpdateStock(-1)}
+                                                    disabled={isSaving || productStock === 0}
+                                                    className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-lg transition-colors cursor-pointer ${productStock > 0 ? 'bg-white border border-slate-200 text-slate-700 shadow-sm hover:bg-slate-50' : 'bg-slate-100 text-slate-300'}`}
+                                                >
+                                                    -
+                                                </button>
+                                                <button
+                                                    onClick={() => handleUpdateStock(1)}
+                                                    disabled={isSaving}
+                                                    className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-lg bg-indigo-600 border border-indigo-700 text-white shadow-sm hover:bg-indigo-700 transition-colors cursor-pointer"
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        {/* Price Control */}
+                                        <div className="bg-slate-50 rounded-xl p-3 border border-slate-100">
+                                            <p className="text-xs font-bold text-slate-500 uppercase mb-2">Precio Público ($)</p>
+                                            <div className="flex gap-2">
+                                                <div className="relative flex-1">
+                                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 font-bold">$</span>
+                                                    <input
+                                                        type="number"
+                                                        value={tempPrice}
+                                                        onChange={(e) => setTempPrice(e.target.value)}
+                                                        className="w-full pl-7 pr-3 py-2.5 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-800 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all"
+                                                    />
+                                                </div>
+                                                <button
+                                                    onClick={handleUpdatePrice}
+                                                    disabled={isSaving || Number(tempPrice) === productPrice}
+                                                    className={`px-4 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center justify-center min-w-[80px] ${Number(tempPrice) !== productPrice ? 'bg-indigo-600 text-white shadow-md hover:bg-indigo-700' : 'bg-slate-200 text-slate-400'}`}
+                                                >
+                                                    {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Guardar'}
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="flex justify-end pt-4">
-                                <button className={`px-8 py-3 rounded-xl font-bold shadow-lg transition-transform hover:scale-105 duration-300 ${accentClasses[theme]}`}>
-                                    Continuar al Pago
-                                </button>
+                            {/* Bottom Nav */}
+                            <div className="h-[72px] bg-white border-t border-slate-100 flex justify-around items-center px-4 shrink-0 pb-2">
+                                <div className="flex flex-col items-center gap-1 text-indigo-600">
+                                    <LayoutGrid className="w-5 h-5" />
+                                    <span className="text-[10px] font-bold">Catálogo</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+                                    <ShoppingCart className="w-5 h-5" />
+                                    <span className="text-[10px] font-bold">Pedidos</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 cursor-pointer">
+                                    <Settings className="w-5 h-5" />
+                                    <span className="text-[10px] font-bold">Ajustes</span>
+                                </div>
                             </div>
                         </div>
                     </div>

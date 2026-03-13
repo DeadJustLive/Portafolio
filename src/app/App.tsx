@@ -12,6 +12,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   useEffect(() => {
+    // Volver siempre al inicio al cargar/recargar la página
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
     // Smooth scroll configuration
     const smoothScroll = () => {
       const scrollSpeed = 1.2;

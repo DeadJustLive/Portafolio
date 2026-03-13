@@ -25,7 +25,7 @@ export function Footer() {
 
           {/* Email Card */}
           <a
-            href="mailto:matias.retamal@duocuc.cl"
+            href="mailto:matiasretamalbarrera.45@gmail.com"
             className="group glass-card p-10 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -34,13 +34,13 @@ export function Footer() {
             </div>
             <h3 className="text-2xl font-bold text-white mb-2">Mensaje Directo</h3>
             <p className="text-slate-400 font-light group-hover:text-indigo-300 transition-colors">
-              matias.retamal@duocuc.cl
+              matiasretamalbarrera.45@gmail.com
             </p>
           </a>
 
           {/* LinkedIn Card */}
           <a
-            href="https://www.linkedin.com/in/matias-retamal"
+            href="https://www.linkedin.com/in/deadjustlive"
             target="_blank"
             rel="noopener noreferrer"
             className="group glass-card p-10 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden"
@@ -57,7 +57,7 @@ export function Footer() {
 
           {/* GitHub Card */}
           <a
-            href="https://github.com/matiasretamal"
+            href="https://github.com/DeadJustLive"
             target="_blank"
             rel="noopener noreferrer"
             className="group glass-card p-10 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden"
