@@ -86,7 +86,7 @@ export function SaaSDemo() {
                     }`}>
                     <iframe
                         ref={webIframeRef}
-                        src="/demos/saas/index.html?view=web"
+                        src="demos/saas/index.html?view=web"
                         title="SaaS Web Store"
                         className="absolute inset-0 w-full h-full border-0"
                     />
@@ -112,7 +112,7 @@ export function SaaSDemo() {
                             >
                                 <iframe
                                     ref={appIframeRef}
-                                    src="/demos/saas/index.html?view=app"
+                                    src="demos/saas/index.html?view=app"
                                     title="SaaS Admin App"
                                     className="w-full h-full border-0 !rounded-[2.4rem]"
                                     style={{ transform: 'translateZ(0)' }}

@@ -6,7 +6,7 @@
 export function StockSimpleDemo() {
     return (
         <iframe
-            src="/demos/stocksimple/index.html"
+            src="demos/stocksimple/index.html"
             title="StockSimple Demo"
             className="w-full h-full border-0 block"
             style={{ minHeight: '100%' }}
