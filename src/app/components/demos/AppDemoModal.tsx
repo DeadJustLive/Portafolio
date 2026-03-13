@@ -35,7 +35,7 @@ export function AppDemoModal({ isOpen, onClose, title, children, mobileOnly, for
     const viewWidths = {
         mobile: 'max-w-[390px] h-full md:h-[min(844px,85dvh)]',
         tablet: 'max-w-[768px] h-full md:h-[min(1024px,85dvh)]',
-        wide: 'max-w-[1280px] h-full md:h-[min(800px,85dvh)]',
+        wide: 'max-w-[1280px] h-full md:h-[min(900px,90dvh)]',
     };
 
     const modalContent = (
