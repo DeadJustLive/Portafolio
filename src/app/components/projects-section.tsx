@@ -125,7 +125,7 @@ export function ProjectsSection() {
           const isEven = index % 2 === 0;
 
           return (
-            <div key={project.id} className={`project-block flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
+            <div key={project.id} className={`project-block flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}>
 
               {/* Info Column */}
               <div className="flex-1 space-y-8">

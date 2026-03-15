@@ -70,6 +70,8 @@
     "@tailwindcss/vite": "4.1.12",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "4.7.0",
+    "marked": "^17.0.4",
+    "puppeteer": "^24.39.0",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5"
   },

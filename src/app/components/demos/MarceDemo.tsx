@@ -141,9 +141,9 @@ export function MarceDemo() {
 
 
                 {/* -------------------- ADMIN VIEW (SAAS APP) -------------------- */}
-                <div className={`transition-all duration-700 ease-in-out transform ${viewMode === 'admin' ? 'opacity-100 translate-y-0 scale-100 z-10' : 'opacity-0 translate-y-12 scale-95 pointer-events-none absolute z-0'}`}>
+                <div className={`transition-all duration-700 ease-in-out transform flex items-center justify-center ${viewMode === 'admin' ? 'opacity-100 translate-y-0 scale-100 z-10' : 'opacity-0 translate-y-12 scale-95 pointer-events-none absolute z-0'}`}>
                     {/* Mobile Phone Frame Wrapper */}
-                    <div className="w-[320px] h-[600px] bg-slate-900 rounded-[3rem] p-3 shadow-2xl relative border-slate-800 border-2">
+                    <div className="w-[min(320px,80vw)] h-[min(600px,72vh)] bg-slate-900 rounded-[3rem] p-3 shadow-2xl relative border-slate-800 border-2">
                         {/* Hardware Buttons */}
                         <div className="absolute top-24 -left-[3px] w-[3px] h-12 bg-slate-700 rounded-l-md" />
                         <div className="absolute top-40 -left-[3px] w-[3px] h-12 bg-slate-700 rounded-l-md" />

@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { Smartphone, Monitor, ArrowRightLeft } from 'lucide-react';
+import { PhoneFrame } from './PhoneFrame';
 
 /**
  * SaaSDemo
@@ -41,8 +42,8 @@ export function SaaSDemo() {
                 const width = entry.contentRect.width;
                 setContainerWidth(width);
 
-                // Si el contenedor es pequeño (ej. vista móvil del modal), forzar vista individual
-                if (width < 1000) {
+                // Forzar vista individual si el contenedor o la ventana son pequeños
+                if (width < 900 || window.innerWidth < 900) {
                     setActiveView(prev => prev === 'both' ? 'web' : prev);
                 }
             }
@@ -52,8 +53,8 @@ export function SaaSDemo() {
         return () => observer.disconnect();
     }, []);
 
-    // Evaluar si mostramos la opción Vista Dual basada en el ancho del contenedor
-    const canShowDualView = containerWidth >= 1000;
+    // La vista dual solo tiene sentido en pantallas con suficiente espacio real (> 900px)
+    const canShowDualView = containerWidth >= 900 && typeof window !== 'undefined' && window.innerWidth >= 900;
 
     return (
         <div ref={containerRef} className="w-full h-full flex flex-col bg-slate-900 overflow-hidden">
@@ -93,16 +94,29 @@ export function SaaSDemo() {
 
             {/* Content Area */}
             <div className="flex-1 flex overflow-hidden relative z-10">
-                {/* Web Store Iframe Area */}
-                <div className={`transition-all duration-500 ease-in-out bg-white relative ${activeView === 'both' ? 'flex-1 h-full' :
+                {/* Web Store Iframe Area with Smart Scaling */}
+                <div className={`transition-all duration-500 ease-in-out bg-white relative flex justify-center overflow-hidden ${activeView === 'both' ? 'flex-1 h-full' :
                     activeView === 'web' ? 'w-full h-full' : 'absolute w-0 opacity-0 pointer-events-none'
                     }`}>
-                    <iframe
-                        ref={webIframeRef}
-                        src="demos/saas/index.html?view=web"
-                        title="SaaS Web Store"
-                        className="absolute inset-0 w-full h-full border-0"
-                    />
+
+                    {/* Scaling Wrapper for ultra-narrow viewports (e.g., Galaxy Fold) */}
+                    <div
+                        style={{
+                            width: containerWidth < 375 && activeView === 'web' ? 375 : '100%',
+                            height: '100%',
+                            transform: containerWidth < 375 && activeView === 'web' ? `scale(${containerWidth / 375})` : 'scale(1)',
+                            transformOrigin: 'top center',
+                            flexShrink: 0
+                        }}
+                        className="relative h-full transition-transform duration-300"
+                    >
+                        <iframe
+                            ref={webIframeRef}
+                            src="demos/saas/index.html?view=web"
+                            title="SaaS Web Store"
+                            className="absolute inset-0 w-full h-full border-0"
+                        />
+                    </div>
                 </div>
 
                 {/* Mobile Admin Iframe */}
@@ -118,33 +132,33 @@ export function SaaSDemo() {
                             scrollbar-width: none;
                         }
                     `}</style>
-                    {/* Device Simulation Container Centrado */}
-                    <div className="relative flex items-center justify-center p-4 my-auto min-h-full">
-                        {/* Realistic Phone Frame Overlay - Ajustado para 6.5" y mejor escalado */}
-                        <div className="relative bg-slate-800 rounded-[3.2rem] p-2.5 shadow-2xl border-2 border-white/10 scale-[0.70] sm:scale-[0.80] xl:scale-90 2xl:scale-100 origin-center transition-transform">
 
-                            {/* Clipping container for the iframe */}
-                            <div
-                                className="w-[300px] h-[640px] sm:w-[310px] sm:h-[670px] !rounded-[2.4rem] !overflow-hidden relative z-10 isolation-isolate"
-                                style={{
-                                    maskImage: 'radial-gradient(white, black)',
-                                    WebkitMaskImage: '-webkit-radial-gradient(white, black)',
-                                    clipPath: 'inset(0 round 2.4rem)'
-                                }}
-                            >
+                    {/* Full-screen on actual mobile (< md), phone frame on md+ */}
+                    {/* Mobile Admin App View */}
+                    {activeView === 'app' ? (
+                        <PhoneFrame title="SaaS Admin App" className="w-full h-full">
+                            <iframe
+                                ref={appIframeRef}
+                                src="demos/saas/index.html?view=app"
+                                title="SaaS Admin App"
+                                className="w-full h-full border-0 scrollbar-hide"
+                                style={{ transform: 'translateZ(0)' }}
+                            />
+                        </PhoneFrame>
+                    ) : (
+                        /* Dual view: compact frame on the right */
+                        <div className="w-[320px] xl:w-[380px] h-full flex items-center justify-center bg-slate-950 border-l border-white/5">
+                            <PhoneFrame title="Admin App" className="w-full h-full p-2 md:p-4">
                                 <iframe
                                     ref={appIframeRef}
                                     src="demos/saas/index.html?view=app"
-                                    title="SaaS Admin App"
-                                    className="w-full h-full border-0 !rounded-[2.4rem] scrollbar-hide"
+                                    title="SaaS Admin App Dual"
+                                    className="w-full h-full border-0 scrollbar-hide"
                                     style={{ transform: 'translateZ(0)' }}
                                 />
-                            </div>
-
-                            {/* Bottom Home Indicator */}
-                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-28 h-1 bg-white/20 rounded-full z-20" />
+                            </PhoneFrame>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
         </div>

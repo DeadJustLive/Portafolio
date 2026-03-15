@@ -77,40 +77,72 @@ export function SkillsSection() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative h-screen bg-slate-950 flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-dvh bg-slate-950 flex flex-col items-center justify-center overflow-hidden py-12 md:py-20"
     >
-      <div className="absolute top-10 md:top-24 w-full text-center z-20 px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      <div className="relative w-full text-center z-20 px-6 shrink-0" style={{ marginBottom: 'clamp(1.5rem, 5vh, 4rem)' }}>
+        <h2
+          className="font-bold text-white leading-tight"
+          style={{ fontSize: 'clamp(1.8rem, 4vw + 1vh, 3.5rem)', marginBottom: 'clamp(0.5rem, 1vh, 1rem)' }}
+        >
           Mi <span className="text-gradient">Enfoque Técnico</span>
         </h2>
-        <p className="text-lg text-slate-400 max-w-2xl mx-auto font-light">
+        <p
+          className="text-slate-400 max-w-2xl mx-auto font-light"
+          style={{ fontSize: 'clamp(0.9rem, 1.5vw + 0.5vh, 1.15rem)' }}
+        >
           Priorizo entender la arquitectura y la lógica. Desliza para explorar.
         </p>
       </div>
 
-      <div ref={cardsRef} className="relative w-full max-w-3xl h-[450px] mt-24 md:mt-32 flex items-center justify-center">
+      <div
+        ref={cardsRef}
+        className="relative w-full max-w-3xl flex items-center justify-center shrink-0"
+        style={{ height: 'clamp(320px, 55vh, 450px)' }}
+      >
         {skillsList.map((skill, index) => (
           <div
             key={index}
             className="skill-card-slide absolute w-full px-6 flex flex-col items-center text-center"
           >
-            <div className={`glass-card rounded-[2rem] p-10 md:p-14 flex flex-col items-center border-t border-l border-white/5 shadow-2xl relative overflow-hidden w-full max-w-2xl mx-auto`}>
+            <div className={`glass-card rounded-[2rem] flex flex-col items-center border-t border-l border-white/5 shadow-2xl relative overflow-hidden w-full max-w-2xl mx-auto`}
+              style={{ padding: 'clamp(1.5rem, 5vh, 3.5rem) clamp(1rem, 5vw, 3.5rem)' }}
+            >
 
               {/* Glow effect matching the tech color */}
               <div className={`absolute -right-20 -top-20 w-64 h-64 ${skill.bg} rounded-full blur-3xl opacity-40 transition-opacity duration-500`} />
 
-              <div className={`w-24 h-24 rounded-3xl ${skill.bg} ${skill.border} border flex items-center justify-center mb-8 relative z-10 shadow-lg`}>
-                <div className={skill.color}>{skill.icon}</div>
+              <div
+                className={`rounded-3xl ${skill.bg} ${skill.border} border flex items-center justify-center relative z-10 shadow-lg shrink-0`}
+                style={{
+                  width: 'clamp(3.5rem, 10vh, 6rem)',
+                  height: 'clamp(3.5rem, 10vh, 6rem)',
+                  marginBottom: 'clamp(1rem, 3vh, 2rem)'
+                }}
+              >
+                <div className={skill.color} style={{ transform: 'scale(clamp(0.6, 5vh, 1))' }}>
+                  {skill.icon}
+                </div>
               </div>
 
-              <div className="relative z-10 flex flex-col items-center">
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">{skill.name}</h3>
+              <div className="relative z-10 flex flex-col items-center w-full">
+                <h3
+                  className="font-bold text-white leading-tight"
+                  style={{ fontSize: 'clamp(1.4rem, 4vh, 2.5rem)', marginBottom: 'clamp(0.5rem, 2vh, 1.5rem)' }}
+                >
+                  {skill.name}
+                </h3>
 
-                <div className="inline-block px-4 py-2 rounded-full bg-slate-900 border border-slate-700 text-sm font-medium text-slate-300 mb-8 tracking-wider uppercase shadow-inner">
+                <div
+                  className="inline-block px-4 py-1.5 md:py-2 rounded-full bg-slate-900 border border-slate-700 font-medium text-slate-300 tracking-wider uppercase shadow-inner"
+                  style={{ fontSize: 'clamp(0.65rem, 1.5vh, 0.875rem)', marginBottom: 'clamp(1rem, 3vh, 2rem)' }}
+                >
                   {skill.level}
                 </div>
 
-                <p className="text-slate-300 text-lg md:text-xl leading-relaxed mix-blend-lighten max-w-lg font-light">
+                <p
+                  className="text-slate-300 leading-relaxed mix-blend-lighten max-w-lg font-light"
+                  style={{ fontSize: 'clamp(0.85rem, 2vh, 1.15rem)' }}
+                >
                   {skill.exp}
                 </p>
               </div>

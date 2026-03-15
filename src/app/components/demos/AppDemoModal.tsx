@@ -20,7 +20,6 @@ export function AppDemoModal({ isOpen, onClose, title, children, mobileOnly, for
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
-            // Reiniciar la vista por defecto
             setView(forceWide ? 'wide' : 'mobile');
         } else {
             document.body.style.overflow = 'auto';
@@ -42,10 +41,10 @@ export function AppDemoModal({ isOpen, onClose, title, children, mobileOnly, for
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 backdrop-blur-sm animate-in fade-in duration-300 p-0 md:p-6">
 
             {/* Modal Container */}
-            <div className={`w-full flex flex-col shadow-2xl relative transition-all duration-500 overflow-hidden ${viewWidths[view]} md:rounded-3xl md:border md:border-white/10 mx-auto`}>
+            <div className={`w-full flex flex-col shadow-2xl relative transition-all duration-300 overflow-hidden ${viewWidths[view]} md:rounded-3xl md:border md:border-white/10 mx-auto`}>
 
                 {/* Header / Controls */}
-                <div className="h-16 border-b border-white/10 flex justify-between items-center px-4 md:px-5 bg-slate-950/80 shrink-0 w-full">
+                <div className="h-16 border-b border-white/10 flex justify-between items-center px-4 md:px-5 bg-slate-950/80 shrink-0 w-full relative z-30">
                     <div className="flex items-center gap-3 min-w-0 flex-1 mr-4">
                         <div className="flex gap-1.5 opacity-50 md:opacity-100 hidden sm:flex shrink-0">
                             <div className="w-3 h-3 rounded-full bg-rose-500" />
@@ -56,7 +55,6 @@ export function AppDemoModal({ isOpen, onClose, title, children, mobileOnly, for
                     </div>
 
                     <div className="flex items-center gap-2 shrink-0">
-                        {/* Viewport Toggles (Hidden on real mobile devices, only for desktop simulation) */}
                         {!mobileOnly && (
                             <div className="hidden md:flex bg-slate-800/50 p-1 rounded-xl border border-white/5 shrink-0">
                                 <button
@@ -83,7 +81,6 @@ export function AppDemoModal({ isOpen, onClose, title, children, mobileOnly, for
                             </div>
                         )}
 
-                        {/* Back/Close Button */}
                         <button
                             onClick={onClose}
                             className="p-2 bg-rose-500/10 text-rose-400 hover:bg-rose-500 hover:text-white rounded-xl font-medium transition-colors flex items-center justify-center shrink-0"
@@ -94,7 +91,7 @@ export function AppDemoModal({ isOpen, onClose, title, children, mobileOnly, for
                     </div>
                 </div>
 
-                {/* Demo Content Area (Mobile Container Frame Simulation) */}
+                {/* Demo Content Area - Responsive container */}
                 <div className="flex-1 w-full bg-slate-950 overflow-hidden relative shadow-inner">
                     {children}
                 </div>
@@ -103,6 +100,5 @@ export function AppDemoModal({ isOpen, onClose, title, children, mobileOnly, for
         </div>
     );
 
-    // Usa createPortal para asegurar que el modal se renderice en el body y cubra todo sin problemas de overflow
     return typeof document !== 'undefined' ? createPortal(modalContent, document.body) : null;
 }
