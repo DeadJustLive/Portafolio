@@ -38,8 +38,8 @@ export function SkillsSection() {
       });
 
       // Set initial states: only the first card is visible, the rest are below
-      gsap.set(cards, { opacity: 0, y: 150, scale: 0.8 });
-      gsap.set(cards[0], { opacity: 1, y: 0, scale: 1 });
+      gsap.set(cards, { opacity: 0, y: 150, scale: 0.8, force3D: true });
+      gsap.set(cards[0], { opacity: 1, y: 0, scale: 1, force3D: true });
 
       cards.forEach((card, i) => {
         // Enters from bottom (skip the first card since it's already there)
@@ -49,7 +49,8 @@ export function SkillsSection() {
             y: 0,
             scale: 1,
             duration: 1,
-            ease: "power2.out"
+            ease: "power2.out",
+            force3D: true
           }, ">-0.5"); // overlap with the exit of the previous card
         }
 
@@ -63,7 +64,8 @@ export function SkillsSection() {
             y: -150,
             scale: 0.8,
             duration: 1,
-            ease: "power2.in"
+            ease: "power2.in",
+            force3D: true
           }, ">");
         }
       });
@@ -102,9 +104,9 @@ export function SkillsSection() {
         {skillsList.map((skill, index) => (
           <div
             key={index}
-            className="skill-card-slide absolute w-full px-6 flex flex-col items-center text-center"
+            className="skill-card-slide absolute w-full px-6 flex flex-col items-center text-center will-change-[transform,opacity]"
           >
-            <div className={`glass-card rounded-[2rem] flex flex-col items-center border-t border-l border-white/5 shadow-2xl relative overflow-hidden w-full max-w-2xl mx-auto`}
+            <div className={`glass-card rounded-[2rem] flex flex-col items-center border-t border-l border-white/5 shadow-2xl relative overflow-hidden w-full max-w-2xl mx-auto will-change-transform`}
               style={{ padding: 'clamp(1.5rem, 5vh, 3.5rem) clamp(1rem, 5vw, 3.5rem)' }}
             >
 

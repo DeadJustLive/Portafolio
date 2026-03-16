@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navigation } from './components/navigation';
 import { Hero } from './components/hero';
+import { AboutMe } from './components/about-me';
 import { AiPhilosophy } from './components/ai-philosophy';
 import { SkillsSection } from './components/skills-section';
 import { ProjectsSection } from './components/projects-section';
@@ -54,6 +55,7 @@ export default function App() {
       <Navigation />
       <Hero />
       <AiPhilosophy />
+      <AboutMe />
       <SkillsSection />
       <ProjectsSection />
       <Footer />
