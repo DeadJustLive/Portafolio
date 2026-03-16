@@ -63,9 +63,9 @@ export function AboutMe() {
                         <div className="glass shadow-2xl rounded-3xl w-full h-full relative z-10 flex items-center justify-center overflow-hidden border border-white/10 group">
                             
                             <img 
-                                src="/ProfileImg.jpeg" 
+                                src="ProfileImg.jpeg" 
                                 alt="Matias Retamal" 
-                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                                className="w-full h-full object-cover rounded-3xl transition-transform duration-500 hover:scale-105"
                             />
                             
                             {/* Decorative element inside photo frame */}
