@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Home, Code, Briefcase, Mail } from 'lucide-react';
+import { Home, Code, Briefcase, Mail, User } from 'lucide-react';
 
 export function Navigation() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +11,7 @@ export function Navigation() {
       setIsVisible(window.scrollY > 300);
       
       // Detectar sección activa
-      const sections = ['hero', 'skills', 'projects', 'contact'];
+      const sections = ['hero', 'about-me', 'skills', 'projects', 'contact'];
       const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
@@ -37,6 +37,7 @@ export function Navigation() {
 
   const navItems = [
     { id: 'hero', icon: Home, label: 'Inicio' },
+    { id: 'about-me', icon: User, label: 'Sobre mí' },
     { id: 'skills', icon: Code, label: 'Skills' },
     { id: 'projects', icon: Briefcase, label: 'Proyectos' },
     { id: 'contact', icon: Mail, label: 'Contacto' },
