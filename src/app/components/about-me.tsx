@@ -61,12 +61,13 @@ export function AboutMe() {
                     <div ref={imageRef} className="relative aspect-square max-w-md mx-auto lg:mx-0 order-1 lg:order-1">
                         <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-emerald-500/20 rounded-3xl transform rotate-3" />
                         <div className="glass shadow-2xl rounded-3xl w-full h-full relative z-10 flex items-center justify-center overflow-hidden border border-white/10 group">
-                            {/* Placeholder for photo */}
-                            <div className="flex flex-col items-center text-slate-500 group-hover:text-indigo-400 transition-colors duration-500">
-                                <User size={80} strokeWidth={1} />
-                                <span className="text-sm mt-4 font-medium tracking-widest uppercase">Fotografía</span>
-                            </div>
-
+                            
+                            <img 
+                                src="/ProfileImg.jpeg" 
+                                alt="Matias Retamal" 
+                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                            />
+                            
                             {/* Decorative element inside photo frame */}
                             <div className="absolute bottom-6 right-6 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
                                 <Code2 className="text-emerald-400 w-12 h-12" />
