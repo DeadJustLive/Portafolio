@@ -19,30 +19,43 @@ export default function App() {
     }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
-    // Smooth scroll configuration
-    const smoothScroll = () => {
-      const scrollSpeed = 1.2;
-      let currentScroll = window.pageYOffset;
-      let targetScroll = currentScroll;
+    // Smooth scroll configuration - Disable on touch devices
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    if (!isTouchDevice) {
+      const smoothScroll = () => {
+        const scrollSpeed = 1.2;
+        let currentScroll = window.pageYOffset;
+        let targetScroll = currentScroll;
 
-      const animate = () => {
-        currentScroll += (targetScroll - currentScroll) * 0.1;
+        const animate = () => {
+          currentScroll += (targetScroll - currentScroll) * 0.1;
 
-        if (Math.abs(targetScroll - currentScroll) > 0.5) {
-          requestAnimationFrame(animate);
-        }
+          if (Math.abs(targetScroll - currentScroll) > 0.5) {
+            requestAnimationFrame(animate);
+          }
+        };
+
+        window.addEventListener('wheel', (e) => {
+          targetScroll += e.deltaY * scrollSpeed;
+          targetScroll = Math.max(0, Math.min(targetScroll, document.body.scrollHeight - window.innerHeight));
+          animate();
+        }, { passive: true });
       };
-
-      window.addEventListener('wheel', (e) => {
-        targetScroll += e.deltaY * scrollSpeed;
-        targetScroll = Math.max(0, Math.min(targetScroll, document.body.scrollHeight - window.innerHeight));
-        animate();
-      }, { passive: true });
-    };
+      
+      smoothScroll();
+    }
 
     // Configuración global de GSAP
     gsap.config({
       nullTargetWarn: false,
+      force3D: true, // Optimizar para hardware acceleration
+    });
+
+    // Reducir lag de ScrollTrigger en móvil
+    ScrollTrigger.config({
+      limitCallbacks: true,
+      syncInterval: 100
     });
 
     return () => {

@@ -1,12 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Layers, Server, Smartphone, Database, CheckCircle2, Play } from 'lucide-react';
+import { ExternalLink, Layers, Server, Smartphone, Database, CheckCircle2, Play, Loader2 } from 'lucide-react';
 
-import { DailyBiteDemo } from './demos/DailyBiteDemo';
-import { StockSimpleDemo } from './demos/StockSimpleDemo';
-import { SaaSDemo } from './demos/SaaSDemo';
 import { AppDemoModal } from './demos/AppDemoModal';
+
+// Lazy loading demo components
+const DailyBiteDemo = lazy(() => import('./demos/DailyBiteDemo').then(m => ({ default: m.DailyBiteDemo })));
+const StockSimpleDemo = lazy(() => import('./demos/StockSimpleDemo').then(m => ({ default: m.StockSimpleDemo })));
+const SaaSDemo = lazy(() => import('./demos/SaaSDemo').then(m => ({ default: m.SaaSDemo })));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +30,7 @@ const projects = [
       'Persistencia offline-first de estadísticas',
       'Configuración personalizada de macronutrientes'
     ],
-    demoComponent: <DailyBiteDemo />
+    demoComponent: DailyBiteDemo
   },
   {
     id: 'stocksimple',
@@ -47,7 +49,7 @@ const projects = [
       'Motor de escaneo QR de alta fidelidad',
       'Gráficos de tendencias y consumo proyectado'
     ],
-    demoComponent: <StockSimpleDemo />
+    demoComponent: StockSimpleDemo
   },
   {
     id: 'saastemplate',
@@ -66,7 +68,7 @@ const projects = [
       'Sistema de roles y gestión de usuarios',
       'Onboarding y planes de suscripción integrados'
     ],
-    demoComponent: <SaaSDemo />
+    demoComponent: SaaSDemo
   }
 ];
 
@@ -104,6 +106,7 @@ export function ProjectsSection() {
   }, []);
 
   const activeProject = projects.find(p => p.id === activeDemoId);
+  const ActiveDemoComponent = activeProject?.demoComponent;
 
   return (
     <section id="projects" ref={containerRef} className="relative min-h-screen py-32 bg-slate-950">
@@ -205,7 +208,14 @@ export function ProjectsSection() {
           mobileOnly={activeProject.id === 'stocksimple' || activeProject.id === 'dailybite'}
           forceWide={activeProject.id === 'saastemplate'}
         >
-          {activeProject.demoComponent}
+          <Suspense fallback={
+            <div className="w-full h-full flex flex-col items-center justify-center bg-slate-950 text-slate-400 gap-4">
+              <Loader2 className="w-10 h-10 animate-spin text-indigo-500" />
+              <p className="text-sm font-medium tracking-widest uppercase">Cargando simulador...</p>
+            </div>
+          }>
+            {ActiveDemoComponent && <ActiveDemoComponent />}
+          </Suspense>
         </AppDemoModal>
       )}
 

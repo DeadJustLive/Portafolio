@@ -10,37 +10,41 @@ export function Hero() {
 
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.2 });
+    const isMobile = window.innerWidth < 768;
 
     // Animate text elements
     if (textRef.current) {
       const elements = textRef.current.children;
       tl.fromTo(elements,
-        { y: 40, opacity: 0, filter: 'blur(10px)' },
-        { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1, stagger: 0.15, ease: 'power3.out' }
+        { y: isMobile ? 20 : 40, opacity: 0, filter: isMobile ? 'none' : 'blur(10px)' },
+        { y: 0, opacity: 1, filter: 'blur(0px)', duration: isMobile ? 0.6 : 1, stagger: 0.1, ease: 'power3.out' }
       );
     }
 
-    // Ambient floating animation for background blobs
-    gsap.to(blobRef1.current, {
-      y: 'random(-50, 50)',
-      x: 'random(-50, 50)',
-      rotation: 'random(-15, 15)',
-      duration: 'random(5, 10)',
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    });
+    // Ambient floating animation for background blobs (Simplified on mobile)
+    const animateBlob = (ref: React.RefObject<HTMLDivElement>, delay = 0) => {
+      if (isMobile) {
+        // Simple static fade in on mobile
+        gsap.fromTo(ref.current, 
+          { opacity: 0 }, 
+          { opacity: 0.5, duration: 2, delay }
+        );
+      } else {
+        gsap.to(ref.current, {
+          y: 'random(-50, 50)',
+          x: 'random(-50, 50)',
+          rotation: 'random(-15, 15)',
+          duration: 'random(5, 10)',
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut',
+          delay
+        });
+      }
+    };
 
-    gsap.to(blobRef2.current, {
-      y: 'random(-50, 50)',
-      x: 'random(-50, 50)',
-      rotation: 'random(-15, 15)',
-      duration: 'random(5, 10)',
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
-      delay: 1
-    });
+    animateBlob(blobRef1);
+    animateBlob(blobRef2, 1);
 
   }, []);
 
@@ -55,11 +59,11 @@ export function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div
           ref={blobRef1}
-          className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-purple-600/20 rounded-full mix-blend-screen filter blur-[120px] opacity-70"
+          className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-purple-600/20 rounded-full mix-blend-screen filter blur-[120px] opacity-70 will-change-transform"
         />
         <div
           ref={blobRef2}
-          className="absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-indigo-600/30 rounded-full mix-blend-screen filter blur-[100px] opacity-60"
+          className="absolute -bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-indigo-600/30 rounded-full mix-blend-screen filter blur-[100px] opacity-60 will-change-transform"
         />
         {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5QzkyQUMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djI2aDJWMzRoMjZ2LTJoLTI2VjJoLTJ2MjZIMnYyaDM0eiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
