@@ -9,7 +9,7 @@ export function Navigation() {
     const handleScroll = () => {
       // Mostrar nav después de scroll
       setIsVisible(window.scrollY > 300);
-      
+
       // Detectar sección activa
       const sections = ['hero', 'about-me', 'skills', 'projects', 'contact'];
       const current = sections.find((section) => {
@@ -20,7 +20,7 @@ export function Navigation() {
         }
         return false;
       });
-      
+
       if (current) setActiveSection(current);
     };
 
@@ -45,29 +45,27 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
-      }`}
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
     >
       <div className="flex items-center gap-2 px-4 py-2 bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-full shadow-lg shadow-black/20">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeSection === item.id;
-          
+
           return (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`group relative flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-                isActive
+              className={`group relative flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${isActive
                   ? 'bg-purple-600 text-white'
                   : 'text-slate-400 hover:text-white hover:bg-slate-800'
-              }`}
+                }`}
               aria-label={item.label}
             >
               <Icon className="w-4 h-4" />
               <span className="hidden md:inline text-sm">{item.label}</span>
-              
+
               {/* Indicator */}
               {isActive && (
                 <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-purple-400 rounded-full" />

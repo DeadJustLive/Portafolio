@@ -61,13 +61,13 @@ export function AboutMe() {
                     <div ref={imageRef} className="relative aspect-square max-w-md mx-auto lg:mx-0 order-1 lg:order-1">
                         <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-emerald-500/20 rounded-3xl transform rotate-3" />
                         <div className="glass shadow-2xl rounded-3xl w-full h-full relative z-10 flex items-center justify-center overflow-hidden border border-white/10 group">
-                            
-                            <img 
-                                src="ProfileImg.jpeg" 
-                                alt="Matias Retamal" 
+
+                            <img
+                                src="ProfileImg.jpeg"
+                                alt="Matias Retamal"
                                 className="w-full h-full object-cover rounded-3xl transition-transform duration-500 hover:scale-105"
                             />
-                            
+
                             {/* Decorative element inside photo frame */}
                             <div className="absolute bottom-6 right-6 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
                                 <Code2 className="text-emerald-400 w-12 h-12" />
@@ -89,7 +89,7 @@ export function AboutMe() {
                         <div className="space-y-6 text-lg text-slate-400 leading-relaxed">
 
                             <p className="animate-text">
-                                Mi nombre es Matias Retamal, tengo 22 años y soy estudiante de <strong className="text-slate-200">Desarrollo de Software en Duoc UC</strong>, me apasiona crear soluciones que no solo funcionen, sino que se sientan naturales. Me especializo en ecosistemas modernos como <span className="text-indigo-400">Angular</span>, <span className="text-emerald-400">Ionic</span> y <span className="text-blue-400">Node.js</span>.
+                                Mi nombre es Matias Retamal, tengo 22 años y soy estudiante de <strong className="text-slate-200">Desarrollo de Software en Duoc UC</strong>, me apasiona crear soluciones que no solo funcionen, sino que se sientan naturales. Me especializo en ecosistemas modernos y tecnologías como <span className="text-cyan-400">React</span>, <span className="text-blue-400">Ionic</span>, <span className="text-yellow-400">Python</span> y <span className="text-red-400">Java</span>.
                             </p>
 
                             <p className="animate-text">

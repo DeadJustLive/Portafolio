@@ -162,12 +162,12 @@ export function ProjectsSection() {
               {/* Demo Mockup Column (now a trigger button) */}
               <div className="flex-1 w-full relative">
                 <div
-                  className={`relative w-full aspect-[4/3] rounded-2xl md:rounded-[2rem] overflow-hidden glass border ${project.borderColor} bg-gradient-to-br ${project.color} flex flex-col items-center justify-center p-8 group cursor-pointer shadow-2xl hover:shadow-${project.color.split('-')[1]}-500/40 transition-shadow duration-500`}
+                  className={`relative w-full aspect-[4/3] rounded-2xl md:rounded-[2rem] overflow-hidden glass border ${project.borderColor} bg-gradient-to-br ${project.color} flex flex-col group cursor-pointer shadow-2xl hover:shadow-${project.color.split('-')[1]}-500/40 transition-shadow duration-500`}
                   onClick={() => setActiveDemoId(project.id)}
                 >
 
-                  {/* Decorativo de ventana estilo macOS */}
-                  <div className="absolute top-0 left-0 w-full h-12 bg-black/40 backdrop-blur-md flex items-center px-4 gap-2 border-b border-white/10 z-20">
+                  {/* Decorativo de ventana estilo macOS (ahora en el flujo del DOM) */}
+                  <div className="w-full h-12 shrink-0 bg-black/40 backdrop-blur-md flex items-center px-4 gap-2 border-b border-white/10 z-20 relative">
                     <div className="w-3 h-3 rounded-full bg-rose-500 border border-white/10" />
                     <div className="w-3 h-3 rounded-full bg-amber-500 border border-white/10" />
                     <div className="w-3 h-3 rounded-full bg-emerald-500 border border-white/10" />
@@ -176,16 +176,19 @@ export function ProjectsSection() {
                     </div>
                   </div>
 
-                  {/* Content Play Button */}
-                  <div className="mt-8 text-center space-y-6 relative z-10 transition-transform duration-500 group-hover:scale-105">
-                    <div className="w-20 h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center border border-white/20 shadow-2xl backdrop-blur-sm group-hover:bg-indigo-500 transition-colors duration-300 text-white">
-                      <Play className="w-8 h-8 ml-1" />
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="text-2xl font-bold text-white tracking-wide">Abrir Demo Interactiva</h4>
-                      <p className="text-sm text-slate-300 font-light max-w-xs mx-auto">
-                        Haz clic para lanzar el simulador PWA de {project.title}
-                      </p>
+                  {/* Contenedor interno que ocupa el resto del espacio y centra el botón */}
+                  <div className="flex-1 w-full flex flex-col items-center justify-center p-4 md:p-8 relative z-10">
+                    {/* Content Play Button */}
+                    <div className="text-center space-y-4 md:space-y-6 transition-transform duration-500 group-hover:scale-105">
+                      <div className="w-16 h-16 md:w-20 md:h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center border border-white/20 shadow-2xl backdrop-blur-sm group-hover:bg-indigo-500 transition-colors duration-300 text-white">
+                        <Play className="w-6 h-6 md:w-8 md:h-8 ml-1" />
+                      </div>
+                      <div className="space-y-1 md:space-y-2">
+                        <h4 className="text-lg md:text-2xl font-bold text-white tracking-wide">Abrir Demo Interactiva</h4>
+                        <p className="hidden md:block text-sm text-slate-300 font-light max-w-xs mx-auto mt-2">
+                          Haz clic para lanzar el simulador PWA de {project.title}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
