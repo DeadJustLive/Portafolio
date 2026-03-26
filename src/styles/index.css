@@ -1,6 +1,14 @@
+@import "tailwindcss";
 @import './fonts.css';
-@import './tailwind.css';
 @import './theme.css';
+
+@layer base {
+  html, body {
+    @apply text-slate-50;
+    overscroll-behavior-y: none;
+    background-color: var(--color-slate-950, #020617);
+  }
+}
 
 @layer utilities {
   .glass {

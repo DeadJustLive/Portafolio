@@ -54,7 +54,6 @@ export function Hero() {
       id="hero"
       ref={containerRef}
       className="hero-section"
-      style={{ paddingTop: 'clamp(3rem, 8vh, 6rem)', paddingBottom: 'clamp(3rem, 8vh, 5rem)' }}
     >
       {/* Background Ambient Effects */}
       <div className="hero-background">
@@ -70,8 +69,11 @@ export function Hero() {
         <div className="hero-grid-overlay" />
       </div>
 
+      {/* Top Spacer for exact flex vertical centering */}
+      <div className="flex-1 w-full min-h-[2rem] sm:min-h-[4rem]" />
+
       {/* Main Content */}
-      <div ref={textRef} className="hero-content">
+      <div ref={textRef} className="hero-content shrink-0 py-4 sm:py-8">
 
         {/* Badge */}
         <div
@@ -138,11 +140,9 @@ export function Hero() {
 
       </div>
 
-      {/* Bottom Scroll Indicator */}
-      <div
-        className="hero-scroll-indicator"
-        style={{ marginTop: 'clamp(1.5rem, 4vh, 2.5rem)' }}
-      >
+      {/* Bottom Spacer area for scroll indicator */}
+      <div className="flex-1 flex flex-col items-center justify-center w-full min-h-[6rem] sm:min-h-[10rem] pb-8 sm:pb-12 xl:pb-20 mt-4 sm:mt-8">
+        <div className="hero-scroll-indicator">
         <button
           onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
           className="hero-scroll-btn"
@@ -155,6 +155,7 @@ export function Hero() {
           </div>
         </button>
       </div>
+    </div>
     </section>
   );
 }

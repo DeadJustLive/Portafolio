@@ -49,13 +49,13 @@ export function AiPhilosophy() {
     }, []);
 
     return (
-        <section id="about" className="relative py-32 px-6 bg-slate-950 overflow-hidden" ref={containerRef}>
+        <section id="about" className="relative min-h-[100svh] flex flex-col justify-center py-24 px-6 bg-slate-950 overflow-hidden" ref={containerRef}>
 
             {/* Background blobs */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full mix-blend-screen filter blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-600/10 rounded-full mix-blend-screen filter blur-[100px] pointer-events-none" />
 
-            <div className="max-w-6xl mx-auto relative z-10">
+            <div className="max-w-6xl mx-auto w-full relative z-10">
 
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <h2 className="animate-fade-in text-sm font-bold tracking-widest text-indigo-400 uppercase mb-4">

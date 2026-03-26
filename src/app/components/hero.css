@@ -1,7 +1,7 @@
 @reference "../../styles/index.css";
 
 .hero-section {
-  @apply relative min-h-dvh flex flex-col items-center justify-center px-6 overflow-hidden bg-slate-950;
+  @apply relative min-h-[100svh] flex flex-col items-center px-6 overflow-x-hidden bg-slate-950;
 }
 
 .hero-background {
@@ -80,7 +80,7 @@
 }
 
 .hero-scroll-indicator {
-  @apply relative z-10 flex flex-col items-center gap-4 mt-8;
+  @apply relative z-10 flex flex-col items-center gap-4;
 }
 
 .hero-scroll-btn {
@@ -95,7 +95,7 @@
 }
 
 .hero-scroll-circle {
-  @apply w-12 h-12 rounded-full border border-slate-700/50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm transition-all animate-bounce shadow-lg relative overflow-hidden;
+  @apply w-12 h-12 rounded-full border border-slate-700/50 flex items-center justify-center bg-slate-900/80 transition-all animate-bounce shadow-lg relative overflow-hidden;
 }
 .hero-scroll-btn:hover .hero-scroll-circle {
   @apply border-slate-500 bg-slate-800;
