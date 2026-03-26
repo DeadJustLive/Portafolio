@@ -26,8 +26,8 @@ export function Hero() {
     const animateBlob = (ref: React.RefObject<HTMLDivElement | null>, delay = 0) => {
       if (isMobile) {
         // Simple static fade in on mobile
-        gsap.fromTo(ref.current, 
-          { opacity: 0 }, 
+        gsap.fromTo(ref.current,
+          { opacity: 0 },
           { opacity: 0.5, duration: 2, delay }
         );
       } else {
@@ -128,12 +128,12 @@ export function Hero() {
             href="#about"
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
             }}
             className="hero-btn-secondary"
           >
             <span className="hero-btn-content">
-              Sobre mi filosofía
+              Contacto
             </span>
           </a>
         </div>
@@ -143,19 +143,19 @@ export function Hero() {
       {/* Bottom Spacer area for scroll indicator */}
       <div className="flex-1 flex flex-col items-center justify-center w-full min-h-[6rem] sm:min-h-[10rem] pb-8 sm:pb-12 xl:pb-20 mt-4 sm:mt-8">
         <div className="hero-scroll-indicator">
-        <button
-          onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-          className="hero-scroll-btn"
-          aria-label="Scroll down"
-        >
-          <span className="hero-scroll-text">Conocer Más</span>
-          <div className="hero-scroll-circle">
-            <div className="hero-scroll-circle-bg" />
-            <ChevronDown className="hero-scroll-icon" />
-          </div>
-        </button>
+          <button
+            onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
+            className="hero-scroll-btn"
+            aria-label="Scroll down"
+          >
+            <span className="hero-scroll-text">Conocer Más</span>
+            <div className="hero-scroll-circle">
+              <div className="hero-scroll-circle-bg" />
+              <ChevronDown className="hero-scroll-icon" />
+            </div>
+          </button>
+        </div>
       </div>
-    </div>
     </section>
   );
 }
