@@ -64,20 +64,20 @@ export function SkillsSection() {
           <button
             key={index}
             onClick={() => setSelectedSkill(skill)}
-            className="skill-card glass-card group"
+            className="skill-card group"
             style={{ '--glow-color': skill.glowColor } as React.CSSProperties}
           >
             {/* Page Curl Indicator */}
-            <div className="absolute top-[0px] right-[0px] w-10 h-10 pointer-events-none z-20 transition-all duration-500 overflow-visible group-hover:w-16 group-hover:h-16">
-              <svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
-                <path d="M-1 -1H41V41L-1 -1Z" fill="#020617" />
-                <path d="M0 0 L40 40 L6 40 Q0 40 0 34 Z" fill={`url(#flapGrad-${index})`} filter="url(#flapShadow)" />
+            <div className="absolute top-[0px] right-[0px] w-10 h-10 pointer-events-none z-20 transition-all duration-500 overflow-hidden group-hover:w-16 group-hover:h-16">
+              <svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0H40V40L0 0Z" fill="#020617" />
+                <path d="M0 0 L40 40 L6 40 Q0 40 0 34 Z" fill={`url(#flapGrad-${index})`} filter={`url(#flapShadow-${index})`} />
                 <defs>
                   <linearGradient id={`flapGrad-${index}`} x1="40" y1="40" x2="0" y2="0" gradientUnits="userSpaceOnUse">
                     <stop offset="0%" stopColor={`rgba(${skill.glowColor}, 0.8)`} />
                     <stop offset="100%" stopColor={`rgba(${skill.glowColor}, 0.1)`} />
                   </linearGradient>
-                  <filter id="flapShadow" x="-20" y="-20" width="80" height="80" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                  <filter id={`flapShadow-${index}`} x="-20" y="-20" width="80" height="80" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                     <feDropShadow dx="-2" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.6" />
                   </filter>
                 </defs>

@@ -21,13 +21,19 @@
 }
 
 .skill-card {
-  @apply relative flex flex-col items-center justify-center p-6 md:p-8 rounded-3xl border border-white/5 transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/20 cursor-pointer;
+  @apply relative flex flex-col items-center justify-center p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/10 shadow-2xl transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/20 cursor-pointer;
+  isolation: isolate;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 @media (hover: hover) {
   .skill-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    @apply border-white/30 shadow-2xl;
+    transform: translateY(-8px) translateZ(0);
+    border-color: rgba(var(--glow-color), 0.4);
+    box-shadow: 0 0 20px rgba(var(--glow-color), 0.15), 0 0 40px rgba(var(--glow-color), 0.08), 0 8px 24px -4px rgba(0, 0, 0, 0.4);
     z-index: 30;
   }
 }
