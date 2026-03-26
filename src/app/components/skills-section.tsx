@@ -97,19 +97,21 @@ export function SkillsSection() {
 
       {/* Modal Overlay */}
       {selectedSkill && (
-        <div className={`skill-modal-wrapper ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`skill-modal-wrapper ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
           {/* Backdrop */}
           <div 
             className="skill-modal-backdrop"
             onClick={closeModal}
           />
           
-          <div className={`skill-modal-content ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'}`} style={{ '--glow-color': selectedSkill.glowColor } as React.CSSProperties}>
+          <div 
+            className={`relative p-8 md:p-10 w-full max-w-[46rem] mx-auto transform-gpu transition-all duration-500 flex flex-col ${isVisible ? 'translate-y-0 scale-100' : 'translate-y-12 scale-95'}`}
+            style={{ filter: `drop-shadow(0 0 35px rgba(${selectedSkill.glowColor}, 0.5))` }}
+          >
             
-            {/* Modal Page Curl Indicator matching the cards */}
-            <div className="absolute top-[0px] right-[0px] w-16 h-16 pointer-events-none z-20 overflow-visible">
-              <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
-                <path d="M-1 -1H65V65L-1 -1Z" fill="#020617" />
+            {/* Modal Page Curl Flap */}
+            <div className="absolute top-[32px] right-[32px] md:top-[40px] md:right-[40px] w-[64px] h-[64px] pointer-events-none z-30">
+              <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" style={{ overflow: 'visible' }}>
                 <path d="M0 0 L64 64 L10 64 Q0 64 0 54 Z" fill="url(#modalFlapGrad)" filter="url(#modalFlapShadow)" />
                 <defs>
                   <linearGradient id="modalFlapGrad" x1="64" y1="64" x2="0" y2="0" gradientUnits="userSpaceOnUse">
@@ -123,35 +125,47 @@ export function SkillsSection() {
               </svg>
             </div>
 
-            {/* Background glow in modal */}
-            <div className={`skill-modal-bg-glow ${selectedSkill.bg}`} />
-            
-            <button
-              onClick={closeModal}
-              className="skill-modal-close-btn"
-              aria-label="Cerrar detalles"
+            {/* The Clipped Glass Modal Body */}
+            <div 
+              className="w-full rounded-[2.5rem] border border-white/10 p-8 md:p-14 z-10 bg-slate-900/40 backdrop-blur-3xl relative overflow-hidden"
+              style={{
+                clipPath: 'polygon(0 0, calc(100% - 64px) 0, 100% 64px, 100% 100%, 0 100%)',
+                borderColor: `rgba(${selectedSkill.glowColor}, 0.5)`
+              }}
             >
-              <X className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
+              {/* Background neon glow inside modal */}
+              <div 
+                className="absolute -right-20 -top-20 w-72 h-72 rounded-full blur-[60px] pointer-events-none" 
+                style={{ backgroundColor: `rgb(${selectedSkill.glowColor})`, opacity: 0.2 }} 
+              />
+              
+              <button
+                onClick={closeModal}
+                className="skill-modal-close-btn"
+                aria-label="Cerrar detalles"
+              >
+                <X className="w-5 h-5 md:w-6 md:h-6" />
+              </button>
 
-            <div className="skill-modal-body">
-              <div className={`skill-modal-icon-container ${selectedSkill.bg} ${selectedSkill.border}`}>
-                <div className={selectedSkill.color} style={{ transform: 'scale(1.4)' }}>
-                  {selectedSkill.icon}
+              <div className="skill-modal-body">
+                <div className={`skill-modal-icon-container ${selectedSkill.bg}`} style={{ borderColor: `rgba(${selectedSkill.glowColor}, 0.3)` }}>
+                  <div className={selectedSkill.color} style={{ transform: 'scale(1.4)' }}>
+                    {selectedSkill.icon}
+                  </div>
                 </div>
+
+                <h3 className="skill-modal-title">
+                  {selectedSkill.name}
+                </h3>
+
+                <div className="skill-modal-level">
+                  {selectedSkill.level}
+                </div>
+
+                <p className="skill-modal-exp text-slate-300 leading-relaxed font-light text-lg md:text-xl max-w-xl mx-auto">
+                  {selectedSkill.exp}
+                </p>
               </div>
-
-              <h3 className="skill-modal-title">
-                {selectedSkill.name}
-              </h3>
-
-              <div className="skill-modal-level">
-                {selectedSkill.level}
-              </div>
-
-              <p className="skill-modal-exp">
-                {selectedSkill.exp}
-              </p>
             </div>
           </div>
         </div>
