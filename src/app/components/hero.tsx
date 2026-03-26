@@ -133,7 +133,7 @@ export function Hero() {
             className="hero-btn-secondary"
           >
             <span className="hero-btn-content">
-              Contacto
+              Contáctame
             </span>
           </a>
         </div>
