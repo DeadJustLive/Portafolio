@@ -9,10 +9,50 @@ import { AppDemoModal } from './demos/AppDemoModal';
 const DailyBiteDemo = lazy(() => import('./demos/DailyBiteDemo').then(m => ({ default: m.DailyBiteDemo })));
 const StockSimpleDemo = lazy(() => import('./demos/StockSimpleDemo').then(m => ({ default: m.StockSimpleDemo })));
 const SaaSDemo = lazy(() => import('./demos/SaaSDemo').then(m => ({ default: m.SaaSDemo })));
+const InmobiliariaWebDemo = lazy(() => import('./demos/IframeDemo').then(m => ({ default: () => <m.IframeDemo url="https://paginawebinmobiliaria.netlify.app/#/" title="Inmobiliaria Web" /> })));
+const InmobiliariaPwaDemo = lazy(() => import('./demos/IframeDemo').then(m => ({ default: () => <m.IframeDemo url="https://pwainmobiliaria.netlify.app/" title="Inmobiliaria PWA" /> })));
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
+  {
+    id: 'inmobiliariaweb',
+    title: 'Portal Inmobiliario',
+    subtitle: 'Plataforma Web de Bienes Raíces',
+    description: 'Plataforma web moderna para la exhibición y búsqueda avanzada de propiedades. Diseño centrado en la experiencia del usuario para facilitar el descubrimiento de inmuebles.',
+    tech: [
+      { name: 'React', icon: <Layers className="w-4 h-4" /> },
+      { name: 'Tailwind CSS', icon: <Layers className="w-4 h-4" /> },
+      { name: 'En Desarrollo', icon: <Server className="w-4 h-4" /> }
+    ],
+    color: 'from-blue-500/20 to-indigo-600/20',
+    borderColor: 'border-indigo-500/30',
+    highlights: [
+      'Búsqueda avanzada y filtros dinámicos',
+      'Galería de propiedades interactiva',
+      'Diseño responsivo y optimizado'
+    ],
+    demoComponent: InmobiliariaWebDemo
+  },
+  {
+    id: 'inmobiliariapwa',
+    title: 'Inmobiliaria App',
+    subtitle: 'Aplicación PWA para Agentes',
+    description: 'Aplicación web progresiva complementaria diseñada para la gestión rápida de propiedades en movimiento, optimizada para dispositivos móviles.',
+    tech: [
+      { name: 'React', icon: <Layers className="w-4 h-4" /> },
+      { name: 'PWA', icon: <Smartphone className="w-4 h-4" /> },
+      { name: 'En Desarrollo', icon: <Database className="w-4 h-4" /> }
+    ],
+    color: 'from-emerald-500/20 to-teal-600/20',
+    borderColor: 'border-emerald-500/30',
+    highlights: [
+      'Experiencia nativa en móviles (PWA)',
+      'Acceso rápido a información clave',
+      'Sincronización en tiempo real'
+    ],
+    demoComponent: InmobiliariaPwaDemo
+  },
   {
     id: 'dailybite',
     title: 'DailyBite',
@@ -208,8 +248,8 @@ export function ProjectsSection() {
           isOpen={!!activeDemoId}
           onClose={() => setActiveDemoId(null)}
           title={`Simulando: ${activeProject.title}`}
-          mobileOnly={activeProject.id === 'stocksimple' || activeProject.id === 'dailybite'}
-          forceWide={activeProject.id === 'saastemplate'}
+          mobileOnly={activeProject.id === 'stocksimple' || activeProject.id === 'dailybite' || activeProject.id === 'inmobiliariapwa'}
+          forceWide={activeProject.id === 'saastemplate' || activeProject.id === 'inmobiliariaweb'}
         >
           <Suspense fallback={
             <div className="w-full h-full flex flex-col items-center justify-center bg-slate-950 text-slate-400 gap-4">
