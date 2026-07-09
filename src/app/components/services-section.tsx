@@ -122,17 +122,19 @@ export function ServicesSection() {
         </div>
 
         {/* Horizontal Scroll / Grid Container */}
-        <div className="flex overflow-x-auto snap-x snap-mandatory md:snap-none md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 pb-8 -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
+        <div className="flex overflow-x-auto snap-x snap-mandatory md:snap-none md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 pb-8 -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
           {services.map((service) => {
             const Icon = service.icon;
             return (
               <div 
                 key={service.id} 
-                className="service-card-anim snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto flex flex-col h-full cursor-pointer group shadow-box rounded-3xl"
+                className="service-card-anim snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto flex flex-col h-full cursor-pointer group"
                 onClick={() => setActiveService(service)}
-                style={{ '--glow-color': service.glow } as React.CSSProperties}
               >
-                <div className="glass p-8 rounded-3xl flex flex-col h-full border border-white/10 group-hover:border-white/20 transition-all duration-300 overflow-hidden">
+                <div 
+                  className="shadow-box bg-slate-900/40 p-8 rounded-3xl flex flex-col h-full border border-white/10 transition-all duration-300 overflow-hidden"
+                  style={{ '--glow-color': service.glow } as React.CSSProperties}
+                >
                   {/* Hover background gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                   

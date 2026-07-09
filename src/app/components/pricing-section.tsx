@@ -51,7 +51,7 @@ export function PricingSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           <div 
-            className="pricing-card glass p-8 rounded-3xl border border-white/10 hover:border-emerald-500/50 transition-all duration-300 shadow-box flex flex-col overflow-hidden transform-gpu"
+            className="pricing-card bg-slate-900/40 p-8 rounded-3xl border border-white/10 hover:border-emerald-500/50 transition-all duration-300 shadow-box flex flex-col overflow-hidden transform-gpu"
             style={{ '--glow-color': '16, 185, 129' } as React.CSSProperties}
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-t-3xl" />
@@ -84,7 +84,7 @@ export function PricingSection() {
           </div>
 
           <div 
-            className="pricing-card glass bg-indigo-950/30 p-8 rounded-3xl border border-indigo-500/30 hover:border-indigo-400 transition-all duration-300 shadow-box flex flex-col transform md:-translate-y-4 overflow-hidden transform-gpu"
+            className="pricing-card bg-indigo-950/40 p-8 rounded-3xl border border-indigo-500/30 hover:border-indigo-400 transition-all duration-300 shadow-box flex flex-col transform md:-translate-y-4 overflow-hidden transform-gpu"
             style={{ '--glow-color': '99, 102, 241' } as React.CSSProperties}
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-blue-500 rounded-t-3xl" />
@@ -123,7 +123,7 @@ export function PricingSection() {
           </div>
 
           <div 
-            className="pricing-card glass p-8 rounded-3xl border border-white/10 hover:border-rose-500/50 transition-all duration-300 shadow-box flex flex-col overflow-hidden transform-gpu"
+            className="pricing-card bg-slate-900/40 p-8 rounded-3xl border border-white/10 hover:border-rose-500/50 transition-all duration-300 shadow-box flex flex-col overflow-hidden transform-gpu"
             style={{ '--glow-color': '244, 63, 94' } as React.CSSProperties}
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-rose-500 rounded-t-3xl" />
