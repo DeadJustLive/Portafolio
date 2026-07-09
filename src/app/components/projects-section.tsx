@@ -1,12 +1,51 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Layers, Server, Smartphone, CheckCircle2, Home, Search, Phone } from 'lucide-react';
+import { ExternalLink, Layers, Server, Smartphone, CheckCircle2, Home, Search, Phone, LayoutDashboard, MessageSquare, Star, Settings, X, Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+type AppTab = {
+  id: string;
+  title: string;
+  desc: string;
+  icon: any;
+};
+
+const appTabs: AppTab[] = [
+  { id: 'dashboard', title: 'Dashboard', desc: 'Panel de control principal para métricas rápidas de la plataforma.', icon: LayoutDashboard },
+  { id: 'properties', title: 'Propiedades', desc: 'Gestión y visualización del catálogo completo de inmuebles.', icon: Home },
+  { id: 'inbox', title: 'Inbox', desc: 'Bandeja de entrada para gestionar consultas y comunicación.', icon: MessageSquare },
+  { id: 'testimonials', title: 'Testimonios', desc: 'Reseñas y opiniones destacadas de los clientes.', icon: Star },
+  { id: 'settings', title: 'Configuraciones', desc: 'Ajustes del perfil y preferencias de la aplicación.', icon: Settings },
+];
+
 export function ProjectsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [activeAppModal, setActiveAppModal] = useState<AppTab | null>(null);
+
+  const activeModalIndex = activeAppModal ? appTabs.findIndex(t => t.id === activeAppModal.id) : -1;
+  const goPrevModal = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (activeModalIndex > 0) {
+      setActiveAppModal(appTabs[activeModalIndex - 1]);
+    }
+  };
+  const goNextModal = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (activeModalIndex < appTabs.length - 1) {
+      setActiveAppModal(appTabs[activeModalIndex + 1]);
+    }
+  };
+
+  // Lock scroll when modal is open
+  useEffect(() => {
+    if (activeAppModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [activeAppModal]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -113,30 +152,34 @@ export function ProjectsSection() {
           </div>
         </div>
 
-        {/* Proyecto 2: PWA */}
+        {/* Proyecto 2: Tauri & Ionic */}
         <div className="project-block flex flex-col md:flex-row-reverse gap-12 items-center">
           <div className="flex-1 space-y-8">
             <div>
-              <h4 className="text-emerald-400 font-semibold tracking-wider uppercase text-sm mb-2">Progressive Web App</h4>
-              <h3 className="text-4xl font-bold text-white mb-6">App PWA Inmobiliaria</h3>
+              <h4 className="text-emerald-400 font-semibold tracking-wider uppercase text-sm mb-2">Escritorio y Móvil</h4>
+              <h3 className="text-4xl font-bold text-white mb-6">App Inmobiliaria</h3>
               <p className="text-lg text-slate-400 leading-relaxed font-light">
-                Aplicación móvil multiplataforma desarrollada como PWA. Permite a los usuarios llevar la experiencia de búsqueda de propiedades en su bolsillo, con capacidades offline parciales y una interfaz fluida nativa.
+                Aplicación multiplataforma para escritorio (Windows/Linux) y dispositivos Android. Desarrollada con Tauri y Ionic para ofrecer un rendimiento nativo, permitiendo gestionar todo el flujo inmobiliario de manera fluida y moderna.
               </p>
             </div>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="text-slate-300">Instalable en iOS y Android sin pasar por tiendas</span>
+                <span className="text-slate-300">Compatible con Android (móvil) y Escritorio, empaquetado optimizado</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="text-slate-300">Rendimiento nativo con animaciones fluidas a 60fps</span>
+                <span className="text-slate-300">Rendimiento nativo gracias a Tauri y la fluidez de Ionic UI</span>
               </div>
             </div>
             <div className="flex flex-wrap gap-3 pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full glass bg-white/5 border border-white/10">
+                <span className="text-slate-400"><Layers className="w-4 h-4" /></span>
+                <span className="text-sm font-medium text-slate-200">Tauri</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full glass bg-white/5 border border-white/10">
                 <span className="text-slate-400"><Smartphone className="w-4 h-4" /></span>
-                <span className="text-sm font-medium text-slate-200">Capacitor / PWA</span>
+                <span className="text-sm font-medium text-slate-200">Ionic</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full glass bg-white/5 border border-white/10">
                 <span className="text-slate-400"><Layers className="w-4 h-4" /></span>
@@ -144,34 +187,101 @@ export function ProjectsSection() {
               </div>
             </div>
           </div>
+          
           <div className="flex-1 w-full">
-            {/* Tabs explanation UI */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="glass border border-emerald-500/30 bg-gradient-to-b from-emerald-500/10 to-transparent p-6 rounded-2xl flex flex-col items-center text-center group hover:bg-emerald-500/20 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Home className="w-6 h-6 text-emerald-400" />
+            <h5 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-6">Módulos de la Aplicación</h5>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {appTabs.map((tab) => (
+                <div 
+                  key={tab.id}
+                  onClick={() => setActiveAppModal(tab)}
+                  className="aspect-square rounded-2xl glass border border-white/10 hover:border-emerald-500/50 bg-slate-900/50 hover:bg-emerald-950/30 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 group shadow-lg hover:shadow-emerald-900/20"
+                >
+                  <div className="w-14 h-14 rounded-full bg-slate-800 group-hover:bg-emerald-500/20 flex items-center justify-center mb-3 transition-colors">
+                    <tab.icon className="w-7 h-7 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+                  </div>
+                  <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">{tab.title}</span>
                 </div>
-                <h5 className="text-white font-medium mb-2">Inicio</h5>
-                <p className="text-sm text-slate-400">Panel principal con propiedades destacadas y recomendaciones personalizadas según las preferencias del usuario.</p>
-              </div>
-              
-              <div className="glass border border-cyan-500/30 bg-gradient-to-b from-cyan-500/10 to-transparent p-6 rounded-2xl flex flex-col items-center text-center group hover:bg-cyan-500/20 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Search className="w-6 h-6 text-cyan-400" />
-                </div>
-                <h5 className="text-white font-medium mb-2">Catálogo</h5>
-                <p className="text-sm text-slate-400">Búsqueda avanzada con filtros por precio, ubicación y características, mostrando resultados en tiempo real.</p>
-              </div>
-
-              <div className="glass border border-purple-500/30 bg-gradient-to-b from-purple-500/10 to-transparent p-6 rounded-2xl flex flex-col items-center text-center group hover:bg-purple-500/20 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Phone className="w-6 h-6 text-purple-400" />
-                </div>
-                <h5 className="text-white font-medium mb-2">Contacto</h5>
-                <p className="text-sm text-slate-400">Acceso directo para agendar visitas o contactar asesores inmobiliarios vía WhatsApp o llamada telefónica.</p>
-              </div>
+              ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* App Tab Detail Modal */}
+      <div 
+        className={`fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 transition-all duration-300 ${activeAppModal ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      >
+        <div 
+          className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
+          onClick={() => setActiveAppModal(null)}
+        />
+        
+        <div 
+          className={`glass-card bg-slate-900 border border-white/10 rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-hidden relative z-10 shadow-2xl flex flex-col md:flex-row transition-all duration-500 delay-100 ${activeAppModal ? 'translate-y-0 scale-100' : 'translate-y-10 scale-95'}`}
+        >
+          {activeAppModal && (
+            <>
+              {/* Photo Area in Modal */}
+              <div className="w-full md:w-1/2 bg-slate-950 flex flex-col items-center justify-center relative min-h-[300px] md:min-h-[600px] border-b md:border-b-0 md:border-r border-white/10">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-500">
+                  <ImageIcon className="w-16 h-16 mb-4 opacity-30" />
+                  <span className="text-lg font-medium">Espacio para Fotografía</span>
+                  <span className="text-sm text-slate-600 mt-2">({activeAppModal.title})</span>
+                </div>
+              </div>
+              
+              {/* Info Area */}
+              <div className="w-full md:w-1/2 p-8 md:p-12 relative flex flex-col justify-center bg-slate-900/50 overflow-y-auto">
+                <button 
+                  onClick={() => setActiveAppModal(null)}
+                  className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors z-20"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                
+                <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-8 shadow-lg shadow-emerald-500/10 shrink-0">
+                  <activeAppModal.icon className="w-8 h-8 text-emerald-400" />
+                </div>
+                
+                <h4 className="text-emerald-400 font-semibold tracking-wider uppercase text-sm mb-2">Vista de la App</h4>
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">{activeAppModal.title}</h3>
+                
+                <p className="text-slate-300 text-lg leading-relaxed font-light mb-8">
+                  {activeAppModal.desc}
+                </p>
+                
+                <div className="bg-slate-950/50 p-6 rounded-xl border border-white/5 mt-auto">
+                  <h5 className="text-white font-medium mb-2">Información Técnica</h5>
+                  <p className="text-sm text-slate-400">Esta sección se renderiza utilizando componentes nativos emulados por Ionic, garantizando transiciones suaves en dispositivos Android y un consumo mínimo de recursos en la versión de escritorio gracias a Tauri.</p>
+                </div>
+
+                {/* Controles de Navegación del Modal */}
+                <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/10">
+                  <button 
+                    onClick={goPrevModal}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${activeModalIndex > 0 ? 'bg-white/5 hover:bg-white/10 text-white cursor-pointer' : 'opacity-30 cursor-not-allowed text-slate-500'}`}
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                    <span className="text-sm font-medium hidden sm:inline">Anterior</span>
+                  </button>
+                  <div className="flex gap-2">
+                    {appTabs.map((_, idx) => (
+                      <div key={idx} className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === activeModalIndex ? 'bg-emerald-400 w-4' : 'bg-white/20'}`} />
+                    ))}
+                  </div>
+                  <button 
+                    onClick={goNextModal}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${activeModalIndex < appTabs.length - 1 ? 'bg-white/5 hover:bg-white/10 text-white cursor-pointer' : 'opacity-30 cursor-not-allowed text-slate-500'}`}
+                  >
+                    <span className="text-sm font-medium hidden sm:inline">Siguiente</span>
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
