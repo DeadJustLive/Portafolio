@@ -19,7 +19,7 @@ export function ContactSection() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <a
-            href="mailto:tu-correo@ejemplo.com"
+            href="mailto:matiasretamalbarrera.45@gmail.com"
             className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-300 ease-in-out bg-indigo-600 rounded-full overflow-hidden hover:bg-indigo-500 hover:shadow-[0_0_30px_rgba(79,70,229,0.4)] w-full sm:w-auto"
           >
             <span className="relative flex items-center gap-3 text-lg">
@@ -30,7 +30,7 @@ export function ContactSection() {
           </a>
 
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/56985955546"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-slate-300 transition-all duration-300 ease-in-out glass hover:text-white hover:bg-white/10 rounded-full overflow-hidden w-full sm:w-auto"
