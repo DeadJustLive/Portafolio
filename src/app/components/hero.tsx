@@ -119,7 +119,7 @@ export function Hero() {
           >
             <span className="hero-btn-primary-bg"></span>
             <span className="hero-btn-content">
-              Explorar Demos
+              Explorar Proyectos
               <ArrowRight className="hero-btn-icon-hover" />
             </span>
           </a>
