@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Home, Code, Briefcase, Mail, User, ChevronUp, Lightbulb } from 'lucide-react';
+import { Home, Code, Briefcase, Mail, User, ChevronUp, Lightbulb, Building2 } from 'lucide-react';
 
 export function Navigation() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,10 +37,12 @@ export function Navigation() {
 
   const navItems = [
     { id: 'hero', icon: Home, label: 'Inicio' },
-    { id: 'about', icon: Lightbulb, label: 'Filosofía' },
     { id: 'about-me', icon: User, label: 'Sobre mí' },
+    { id: 'services', icon: Briefcase, label: 'Servicios' },
     { id: 'skills', icon: Code, label: 'Skills' },
-    { id: 'projects', icon: Briefcase, label: 'Proyectos' },
+    { id: 'projects', icon: Lightbulb, label: 'Proyectos' },
+    { id: 'workflow', icon: Briefcase, label: 'Proceso' },
+    { id: 'pricing', icon: Building2, label: 'Tarifas' },
     { id: 'contact', icon: Mail, label: 'Contacto' },
   ];
 

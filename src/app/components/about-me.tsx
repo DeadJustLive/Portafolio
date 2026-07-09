@@ -83,21 +83,21 @@ export function AboutMe() {
                             Sobre mí
                         </h2>
                         <h3 className="animate-text text-4xl font-bold text-white mb-8">
-                            Arquitecto de soluciones con <span className="text-gradient">visión humana</span> y potencia digital.
+                            Desarrollador <span className="text-gradient">freelance</span> comprometido con la calidad.
                         </h3>
 
                         <div className="space-y-6 text-lg text-slate-400 leading-relaxed">
 
                             <p className="animate-text">
-                                Mi nombre es Matias Retamal, tengo 22 años y soy estudiante de <strong className="text-slate-200">Desarrollo de Software en Duoc UC</strong>, me apasiona crear soluciones que no solo funcionen, sino que se sientan naturales. Me especializo en ecosistemas modernos y tecnologías como <span className="text-cyan-400">React</span>, <span className="text-blue-400">Ionic</span>, <span className="text-yellow-400">Python</span> y <span className="text-red-400">Java</span>.
+                                Mi nombre es Matias Retamal, tengo 22 años y soy estudiante de <strong className="text-slate-200">Desarrollo de Software en Duoc UC e Ingeniero de IA</strong>. Me especializo en construir aplicaciones prácticas y modernas utilizando tecnologías robustas como <span className="text-cyan-400">React</span>, <span className="text-blue-400">Ionic</span>, <span className="text-yellow-400">Python</span>, <span className="text-fuchsia-400">IA Generativa</span> y <span className="text-red-400">Java</span>.
                             </p>
 
                             <p className="animate-text">
-                                Mi metodología se aleja de la codificación mecánica. Trabajo bajo lo que llamo <strong className="text-indigo-300">"Sinergia Agentic"</strong>: utilizo la IA como un motor de ejecución para centrar mi energía en la arquitectura, la experiencia de usuario y la resolución de problemas de negocio complejos. Creo firmemente que el código debe ser tan elocuente como su propósito.
+                                Mi metodología de trabajo se basa en una planificación rigurosa, modularidad y validación constante, lo que garantiza plataformas estables y seguras para cualquier negocio. Ya sea desarrollando desde cero o integrando IA para automatizar procesos, mantengo un control arquitectónico estricto. Esto me permite entregar proyectos escalables, predecibles y que responden directamente a las necesidades y objetivos de mis clientes.
                             </p>
 
                             <p className="animate-text border-l-2 border-emerald-500/30 pl-6 italic">
-                                "Mi objetivo es transformar ideas abstractas en herramientas reales y escalables que simplifiquen la vida de las personas, cuidando cada detalle desde la lógica del servidor hasta la última animación de la interfaz."
+                                "Mi objetivo es entregar plataformas estables y escalables. Los proyectos reales requieren soluciones serias, donde la funcionalidad y el rendimiento sean la verdadera prioridad."
                             </p>
                         </div>
 

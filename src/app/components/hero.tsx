@@ -92,8 +92,8 @@ export function Hero() {
             marginBottom: 'clamp(0.5rem, 2vh, 1.5rem)',
           }}
         >
-          <span className="hero-title-line">Creando Experiencias</span>
-          <span className="hero-title-gradient text-gradient">Digitales Premium</span>
+          <span className="hero-title-line">Desarrollando Soluciones</span>
+          <span className="hero-title-gradient text-gradient">de Software Reales</span>
         </h1>
 
         {/* Description */}
@@ -104,7 +104,7 @@ export function Hero() {
             marginBottom: 'clamp(1.25rem, 4vh, 3rem)',
           }}
         >
-          Transformando ideas complejas en interfaces limpias, interactivas y escalables. Apasionado por el rendimiento y el diseño cuidado al detalle.
+          Ingeniero de Software Freelance enfocado en construir aplicaciones web y móviles robustas, escalables y orientadas a resultados. Mi trabajo habla por sí mismo.
         </p>
 
         {/* Action Buttons */}

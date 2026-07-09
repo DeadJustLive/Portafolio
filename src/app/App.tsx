@@ -4,9 +4,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navigation } from './components/navigation';
 import { Hero } from './components/hero';
 import { AboutMe } from './components/about-me';
-import { AiPhilosophy } from './components/ai-philosophy';
+import { ServicesSection } from './components/services-section';
 import { SkillsSection } from './components/skills-section';
 import { ProjectsSection } from './components/projects-section';
+import { WorkflowSection } from './components/workflow-section';
+import { PricingSection } from './components/pricing-section';
+import { ContactSection } from './components/contact-section';
 import { Footer } from './components/footer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -67,10 +70,13 @@ export default function App() {
     <div className="bg-slate-950 font-sans selection:bg-indigo-500/30">
       <Navigation />
       <Hero />
-      <AiPhilosophy />
       <AboutMe />
+      <ServicesSection />
       <SkillsSection />
       <ProjectsSection />
+      <WorkflowSection />
+      <PricingSection />
+      <ContactSection />
       <Footer />
     </div>
   );
