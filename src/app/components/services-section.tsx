@@ -12,7 +12,7 @@ const services = [
     title: 'Desarrollo Web Fullstack',
     description: 'Creación de plataformas web modernas, rápidas y escalables adaptadas a tus objetivos de negocio.',
     color: 'from-indigo-500 to-blue-500',
-    glow: 'rgba(99, 102, 241, 0.4)',
+    glow: '99, 102, 241',
     details: {
       summary: 'Desarrollo integral de aplicaciones web, desde la interfaz interactiva hasta la lógica robusta del servidor.',
       features: [
@@ -28,7 +28,7 @@ const services = [
     title: 'Desarrollo de Aplicaciones',
     description: 'Apps móviles (Android) y de escritorio (Windows/Linux) con rendimiento nativo.',
     color: 'from-emerald-500 to-teal-500',
-    glow: 'rgba(16, 185, 129, 0.4)',
+    glow: '16, 185, 129',
     details: {
       summary: 'Creación de aplicaciones rápidas y multiplataforma (Android, Windows, Linux y Web), excluyendo desarrollo nativo iOS.',
       features: [
@@ -44,7 +44,7 @@ const services = [
     title: 'Servicio Técnico Informático',
     description: 'Mantenimiento preventivo, reparación y optimización de equipos informáticos.',
     color: 'from-red-500 to-rose-500',
-    glow: 'rgba(239, 68, 68, 0.4)',
+    glow: '239, 68, 68',
     details: {
       summary: 'Soluciones técnicas de hardware y software para mantener tus computadoras funcionando a su máxima capacidad.',
       features: [
@@ -60,7 +60,7 @@ const services = [
     title: 'Consultoría y Arquitectura',
     description: 'Asesoría técnica para diseñar sistemas robustos y elegir el stack tecnológico adecuado.',
     color: 'from-amber-500 to-orange-500',
-    glow: 'rgba(245, 158, 11, 0.4)',
+    glow: '245, 158, 11',
     details: {
       summary: 'Planificación estratégica antes de escribir la primera línea de código para asegurar el éxito del proyecto.',
       features: [
@@ -128,10 +128,11 @@ export function ServicesSection() {
             return (
               <div 
                 key={service.id} 
-                className="service-card-anim snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto flex flex-col h-full cursor-pointer group"
+                className="service-card-anim snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto flex flex-col h-full cursor-pointer group shadow-box rounded-3xl"
                 onClick={() => setActiveService(service)}
+                style={{ '--glow-color': service.glow } as React.CSSProperties}
               >
-                <div className="glass p-8 rounded-3xl flex flex-col h-full border border-white/10 group-hover:border-white/20 transition-all duration-300 relative overflow-hidden" style={{ boxShadow: `0 10px 40px -10px ${service.glow}` }}>
+                <div className="glass p-8 rounded-3xl flex flex-col h-full border border-white/10 group-hover:border-white/20 transition-all duration-300 overflow-hidden">
                   {/* Hover background gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                   

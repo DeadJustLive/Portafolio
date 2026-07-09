@@ -30,8 +30,10 @@ export function PricingSection() {
 
   return (
     <section id="pricing" className="relative py-32 bg-slate-950 overflow-hidden" ref={containerRef}>
-      {/* Background glow */}
+      {/* Background glows for depth */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full filter blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-600/10 rounded-full filter blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full filter blur-[150px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
@@ -48,8 +50,10 @@ export function PricingSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          {/* Card 1: PYMEs (SaaS) */}
-          <div className="pricing-card glass p-8 rounded-3xl border border-white/10 hover:border-emerald-500/50 transition-all duration-300 relative flex flex-col overflow-hidden transform-gpu">
+          <div 
+            className="pricing-card glass p-8 rounded-3xl border border-white/10 hover:border-emerald-500/50 transition-all duration-300 shadow-box flex flex-col overflow-hidden transform-gpu"
+            style={{ '--glow-color': '16, 185, 129' } as React.CSSProperties}
+          >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-t-3xl" />
             <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-6">
               <Store className="w-6 h-6 text-emerald-400" />
@@ -79,8 +83,10 @@ export function PricingSection() {
             </ul>
           </div>
 
-          {/* Card 2: Empresas (Custom) */}
-          <div className="pricing-card glass bg-indigo-950/30 p-8 rounded-3xl border border-indigo-500/30 hover:border-indigo-400 transition-all duration-300 relative flex flex-col transform md:-translate-y-4 overflow-hidden transform-gpu">
+          <div 
+            className="pricing-card glass bg-indigo-950/30 p-8 rounded-3xl border border-indigo-500/30 hover:border-indigo-400 transition-all duration-300 shadow-box flex flex-col transform md:-translate-y-4 overflow-hidden transform-gpu"
+            style={{ '--glow-color': '99, 102, 241' } as React.CSSProperties}
+          >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-blue-500 rounded-t-3xl" />
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
               A Medida
@@ -116,8 +122,10 @@ export function PricingSection() {
             </ul>
           </div>
 
-          {/* Card 3: Servicio Técnico */}
-          <div className="pricing-card glass p-8 rounded-3xl border border-white/10 hover:border-rose-500/50 transition-all duration-300 relative flex flex-col overflow-hidden transform-gpu">
+          <div 
+            className="pricing-card glass p-8 rounded-3xl border border-white/10 hover:border-rose-500/50 transition-all duration-300 shadow-box flex flex-col overflow-hidden transform-gpu"
+            style={{ '--glow-color': '244, 63, 94' } as React.CSSProperties}
+          >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-rose-500 rounded-t-3xl" />
             <div className="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center mb-6">
               <Wrench className="w-6 h-6 text-rose-400" />

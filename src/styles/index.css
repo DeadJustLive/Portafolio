@@ -12,11 +12,29 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] isolate;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 isolate;
   }
   
   .glass-card {
-    @apply bg-slate-900/40 backdrop-blur-2xl border border-white/10 shadow-2xl;
+    @apply bg-slate-900/40 backdrop-blur-2xl border border-white/10;
+  }
+
+  .shadow-box {
+    box-shadow: 0 10px 40px -10px rgba(var(--glow-color, 0, 0, 0), 0.4);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    /* Aseguramos contexto de apilamiento base */
+    position: relative;
+    z-index: 10;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .shadow-box:hover {
+    transform: translateY(-8px) translateZ(0);
+    border-color: rgba(var(--glow-color, 0, 0, 0), 0.4);
+    box-shadow: 0 0 20px rgba(var(--glow-color, 0, 0, 0), 0.15), 0 0 40px rgba(var(--glow-color, 0, 0, 0), 0.08), 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+    /* Elevamos la tarjeta al hacer hover para evitar solapamientos visuales */
+    z-index: 50;
   }
 
   .text-gradient {

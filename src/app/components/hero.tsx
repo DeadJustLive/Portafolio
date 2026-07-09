@@ -125,7 +125,7 @@ export function Hero() {
           </a>
 
           <a
-            href="#about"
+            href="#contact"
             onClick={(e) => {
               e.preventDefault();
               document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -144,7 +144,7 @@ export function Hero() {
       <div className="flex-1 flex flex-col items-center justify-center w-full min-h-[6rem] sm:min-h-[10rem] pb-8 sm:pb-12 xl:pb-20 mt-4 sm:mt-8">
         <div className="hero-scroll-indicator">
           <button
-            onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.querySelector('#about-me')?.scrollIntoView({ behavior: 'smooth' })}
             className="hero-scroll-btn"
             aria-label="Scroll down"
           >
