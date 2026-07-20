@@ -1,4 +1,6 @@
-# 🧩 Personal Portfolio Website - Ing. Matias Retamal
+# 🧩 Personal Portfolio Website - Matias Retamal
+
+> **Software Engineer & AI Architect**
 
 ## 📘 Propósito del Sistema
 Este sistema constituye una plataforma de exhibición profesional (Portfolio) diseñada para centralizar y demostrar capacidades técnicas en ingeniería de software, arquitectura de sistemas y desarrollo asistido por IA. El propósito principal es proporcionar un entorno interactivo donde stakeholders y reclutadores puedan validar la calidad de ejecución, el stack tecnológico y la filosofía de desarrollo del autor.

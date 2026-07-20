@@ -104,7 +104,7 @@ export function Hero() {
             marginBottom: 'clamp(1.25rem, 4vh, 3rem)',
           }}
         >
-          Ingeniero de Software Freelance enfocado en construir aplicaciones web y móviles robustas, escalables y orientadas a resultados. Mi trabajo habla por sí mismo.
+          Software Engineer Freelance enfocado en construir aplicaciones web y móviles robustas, escalables y orientadas a resultados. Mi trabajo habla por sí mismo.
         </p>
 
         {/* Action Buttons */}

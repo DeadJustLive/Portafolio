@@ -89,7 +89,7 @@ export function AboutMe() {
                         <div className="space-y-6 text-lg text-slate-400 leading-relaxed">
 
                             <p className="animate-text">
-                                Mi nombre es Matias Retamal, tengo 22 años y soy estudiante de <strong className="text-slate-200">Desarrollo de Software en Duoc UC e Ingeniero de IA</strong>. Me especializo en construir aplicaciones prácticas y modernas utilizando tecnologías robustas como <span className="text-cyan-400">React</span>, <span className="text-blue-400">Ionic</span>, <span className="text-yellow-400">Python</span>, <span className="text-fuchsia-400">IA Generativa</span> y <span className="text-red-400">Java</span>.
+                                Mi nombre es Matias Retamal, soy <strong className="text-slate-200">Software Engineer & AI Architect</strong>. Me especializo en construir aplicaciones prácticas y modernas utilizando tecnologías robustas como <span className="text-cyan-400">React</span>, <span className="text-blue-400">Ionic</span>, <span className="text-yellow-400">Python</span>, <span className="text-fuchsia-400">IA Generativa</span> y <span className="text-red-400">Java</span>.
                             </p>
 
                             <p className="animate-text">
