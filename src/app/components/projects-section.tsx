@@ -13,16 +13,18 @@ type AppTab = {
 };
 
 const appTabs: AppTab[] = [
-  { id: 'dashboard', title: 'Dashboard', desc: 'Panel de control principal para métricas rápidas de la plataforma.', icon: LayoutDashboard },
-  { id: 'properties', title: 'Propiedades', desc: 'Gestión y visualización del catálogo completo de inmuebles.', icon: Home },
-  { id: 'inbox', title: 'Inbox', desc: 'Bandeja de entrada para gestionar consultas y comunicación.', icon: MessageSquare },
-  { id: 'testimonials', title: 'Testimonios', desc: 'Reseñas y opiniones destacadas de los clientes.', icon: Star },
-  { id: 'settings', title: 'Configuraciones', desc: 'Ajustes del perfil y preferencias de la aplicación.', icon: Settings },
+  { id: 'Publicaciones', title: 'Publicaciones', desc: 'CRUD interactivo para gestión completa del catálogo de inmuebles, con vistas tácticas y operacionales.', icon: Home },
+  { id: 'MenuEdicionPublicaciones_01', title: 'Gestión de Inmuebles', desc: 'Formularios avanzados para edición de propiedades, con borradores locales y persistencia de datos.', icon: Layers },
+  { id: 'Inbox', title: 'Inbox Colaborativo', desc: 'CRM integrado para gestionar consultas y comunicación centralizada con los prospectos.', icon: MessageSquare },
+  { id: 'testimonios', title: 'Testimonios', desc: 'Gestión y moderación de reseñas para publicar de forma dinámica en la plataforma web.', icon: Star },
+  { id: 'Configuracion_basica', title: 'Configuraciones e IA', desc: 'Ajustes globales, herramientas para generación de copywriting y hashtags con Inteligencia Artificial, e integraciones.', icon: Settings },
 ];
 
 export function ProjectsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeAppModal, setActiveAppModal] = useState<AppTab | null>(null);
+  const [imageError, setImageError] = useState<Record<string, boolean>>({});
+  const [showMobileInfo, setShowMobileInfo] = useState(false);
 
   const activeModalIndex = activeAppModal ? appTabs.findIndex(t => t.id === activeAppModal.id) : -1;
   const goPrevModal = (e: React.MouseEvent) => {
@@ -42,6 +44,7 @@ export function ProjectsSection() {
   useEffect(() => {
     if (activeAppModal) {
       document.body.style.overflow = 'hidden';
+      setShowMobileInfo(false); // Reset mobile view to show image first
     } else {
       document.body.style.overflow = '';
     }
@@ -114,7 +117,7 @@ export function ProjectsSection() {
               </div>
             </div>
             <div className="pt-4">
-              <a href="https://paginawebinmobiliaria.netlify.app/#/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-colors">
+              <a href="https://www.schmidtcorredores.cl" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-colors">
                 <ExternalLink className="w-5 h-5" />
                 Visitar Sitio Web
               </a>
@@ -126,64 +129,54 @@ export function ProjectsSection() {
                 <div className="w-3 h-3 rounded-full bg-rose-500 border border-white/10" />
                 <div className="w-3 h-3 rounded-full bg-amber-500 border border-white/10" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500 border border-white/10" />
-                <div className="ml-4 flex-1 flex justify-center pr-12">
-                   <div className="w-1/2 h-4 bg-white/10 rounded-full" />
+                <div className="ml-4 flex-1 flex items-center justify-center pr-12">
+                   <div className="h-6 bg-slate-800/80 rounded flex items-center px-4 text-xs text-slate-400 border border-white/5 font-mono truncate max-w-[200px]">schmidtcorredores.cl</div>
                 </div>
               </div>
-              <div className="w-full h-full mt-8 bg-slate-900 rounded-lg shadow-inner overflow-hidden flex flex-col border border-white/5 relative">
-                <div className="h-32 bg-indigo-900/30 w-full mb-4" />
-                <div className="px-6 flex gap-4">
-                  <div className="flex-1 space-y-3">
-                    <div className="h-4 bg-white/10 rounded w-3/4" />
-                    <div className="h-4 bg-white/10 rounded w-1/2" />
-                    <div className="h-24 bg-white/5 rounded w-full mt-4" />
-                  </div>
-                  <div className="flex-1 space-y-3">
-                    <div className="h-4 bg-white/10 rounded w-3/4" />
-                    <div className="h-4 bg-white/10 rounded w-1/2" />
-                    <div className="h-24 bg-white/5 rounded w-full mt-4" />
-                  </div>
+              <a href="https://www.schmidtcorredores.cl" target="_blank" rel="noreferrer" className="w-full h-full mt-8 bg-slate-900 rounded-lg shadow-inner overflow-hidden flex flex-col border border-white/5 relative group/img cursor-pointer">
+                <img src={`${import.meta.env.BASE_URL}SC_Propiedades/HomeSC.png`} alt="Sitio Web Schmidt Corredores" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/img:scale-105" />
+                <div className="absolute inset-0 flex items-center justify-center bg-slate-950/40 backdrop-blur-[2px] opacity-0 group-hover/img:opacity-100 transition-opacity">
+                  <span className="text-white font-medium bg-slate-900/90 px-6 py-3 rounded-full backdrop-blur-md shadow-xl border border-white/10 flex items-center gap-2">
+                    <ExternalLink className="w-5 h-5" /> Visitar Sitio Web
+                  </span>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center bg-slate-950/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-white font-medium bg-slate-900/80 px-4 py-2 rounded-full backdrop-blur-md">Previsualización Web</span>
-                </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Proyecto 2: Tauri & Ionic */}
+        {/* Proyecto 2: Tauri & Capacitor */}
         <div className="project-block flex flex-col md:flex-row-reverse gap-12 items-center">
           <div className="flex-1 space-y-8">
             <div>
-              <h4 className="text-emerald-400 font-semibold tracking-wider uppercase text-sm mb-2">Escritorio y Móvil</h4>
-              <h3 className="text-4xl font-bold text-white mb-6">App Inmobiliaria</h3>
+              <h4 className="text-emerald-400 font-semibold tracking-wider uppercase text-sm mb-2">PWA, Escritorio y Móvil</h4>
+              <h3 className="text-4xl font-bold text-white mb-6">CRM & Gestión Inmobiliaria</h3>
               <p className="text-lg text-slate-400 leading-relaxed font-light">
-                Aplicación multiplataforma para escritorio (Windows/Linux) y dispositivos Android. Desarrollada con Tauri y Ionic para ofrecer un rendimiento nativo, permitiendo gestionar todo el flujo inmobiliario de manera fluida y moderna.
+                Una solución SaaS integral para administración inmobiliaria. Permite gestionar propiedades, clientes (CRM) y métricas desde cualquier dispositivo gracias a su arquitectura moderna (React 18 + Supabase), compilada de forma nativa usando Capacitor para Android y Tauri para Escritorio.
               </p>
             </div>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="text-slate-300">Compatible con Android (móvil) y Escritorio, empaquetado optimizado</span>
+                <span className="text-slate-300">Base de datos en tiempo real (PostgreSQL / Supabase) con soporte offline parcial (Persistencia local).</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="text-slate-300">Rendimiento nativo gracias a Tauri y la fluidez de Ionic UI</span>
+                <span className="text-slate-300">Rendimiento nativo interplataforma mediante Capacitor (Móvil) y Tauri (Linux/Windows).</span>
               </div>
             </div>
             <div className="flex flex-wrap gap-3 pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 px-4 py-2 rounded-full glass bg-white/5 border border-white/10">
                 <span className="text-slate-400"><Layers className="w-4 h-4" /></span>
-                <span className="text-sm font-medium text-slate-200">Tauri</span>
+                <span className="text-sm font-medium text-slate-200">React + TS</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full glass bg-white/5 border border-white/10">
                 <span className="text-slate-400"><Smartphone className="w-4 h-4" /></span>
-                <span className="text-sm font-medium text-slate-200">Ionic</span>
+                <span className="text-sm font-medium text-slate-200">Capacitor</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 rounded-full glass bg-white/5 border border-white/10">
-                <span className="text-slate-400"><Layers className="w-4 h-4" /></span>
-                <span className="text-sm font-medium text-slate-200">React</span>
+                <span className="text-slate-400"><Server className="w-4 h-4" /></span>
+                <span className="text-sm font-medium text-slate-200">Supabase</span>
               </div>
             </div>
           </div>
@@ -219,21 +212,70 @@ export function ProjectsSection() {
         />
         
         <div 
-          className={`glass-card bg-slate-900 border border-white/10 rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-hidden relative z-10 shadow-2xl flex flex-col md:flex-row transition-all duration-500 delay-100 ${activeAppModal ? 'translate-y-0 scale-100' : 'translate-y-10 scale-95'}`}
+          className={`glass-card bg-slate-900 border border-white/10 rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-hidden relative z-10 shadow-2xl flex flex-row transition-all duration-500 delay-100 ${activeAppModal ? 'translate-y-0 scale-100' : 'translate-y-10 scale-95'}`}
         >
           {activeAppModal && (
             <>
               {/* Photo Area in Modal */}
-              <div className="w-full md:w-1/2 bg-slate-950 flex flex-col items-center justify-center relative min-h-[300px] md:min-h-[600px] border-b md:border-b-0 md:border-r border-white/10">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-500">
-                  <ImageIcon className="w-16 h-16 mb-4 opacity-30" />
-                  <span className="text-lg font-medium">Espacio para Fotografía</span>
-                  <span className="text-sm text-slate-600 mt-2">({activeAppModal.title})</span>
+              <div className={`w-full shrink-0 md:w-1/2 bg-slate-950 flex flex-col items-center justify-center relative min-h-[75vh] md:min-h-[600px] border-r border-white/10 overflow-hidden transition-transform duration-500 ease-[cubic-bezier(0.3,0,0.1,1)] ${showMobileInfo ? '-translate-x-full' : 'translate-x-0'} md:translate-x-0`}>
+                
+                {/* Floating Buttons on Mobile */}
+                <div className="absolute top-4 right-4 z-20 md:hidden flex items-center gap-3">
+                  <button 
+                    onClick={() => setActiveAppModal(null)}
+                    className="p-2 rounded-full bg-slate-900/80 text-white backdrop-blur-sm border border-white/10 shadow-lg"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                  <button onClick={() => setShowMobileInfo(true)} className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg transition-colors">
+                    <Search className="w-4 h-4" /> Info
+                  </button>
                 </div>
+
+                {/* Content: Sequence vs Single */}
+                {activeAppModal.id === 'MenuEdicionPublicaciones_01' ? (
+                  <div className="absolute inset-0 overflow-y-auto p-4 pt-20 md:p-8 flex flex-col gap-8 items-center custom-scrollbar w-full">
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+                      <img 
+                        key={`MenuEdicionPublicaciones_0${num}`}
+                        src={`${import.meta.env.BASE_URL}SC_Propiedades/AppMobil/MenuEdicionPublicaciones_0${num}.png`} 
+                        alt={`${activeAppModal.title} ${num}`}
+                        className="w-full max-w-md h-auto object-contain rounded-xl drop-shadow-2xl"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="absolute inset-0 w-full h-full flex items-center justify-center overflow-y-auto custom-scrollbar">
+                    {!imageError[activeAppModal.id] && (
+                      <img 
+                        key={activeAppModal.id}
+                        src={`${import.meta.env.BASE_URL}SC_Propiedades/AppMobil/${activeAppModal.id}.png`} 
+                        alt={activeAppModal.title}
+                        className="absolute inset-0 w-full h-full object-contain p-4 md:p-8 pt-20 md:pt-8 drop-shadow-2xl m-auto z-10"
+                        onError={() => setImageError(prev => ({ ...prev, [activeAppModal.id]: true }))}
+                      />
+                    )}
+                    {imageError[activeAppModal.id] && (
+                      <div className="flex flex-col items-center justify-center text-slate-500 w-full h-full min-h-[300px] pt-16">
+                        <ImageIcon className="w-16 h-16 mb-4 opacity-30" />
+                        <span className="text-lg font-medium text-center px-4">Fotografía de la App <br/> (Falta {import.meta.env.BASE_URL}SC_Propiedades/AppMobil/{activeAppModal.id}.png)</span>
+                        <span className="text-sm text-slate-600 mt-2">({activeAppModal.title})</span>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               
               {/* Info Area */}
-              <div className="w-full md:w-1/2 p-8 md:p-12 relative flex flex-col justify-center bg-slate-900/50 overflow-y-auto">
+              <div className={`w-full shrink-0 md:w-1/2 p-8 md:p-12 pb-24 md:pb-12 relative flex flex-col justify-center bg-slate-900/50 overflow-y-auto transition-transform duration-500 ease-[cubic-bezier(0.3,0,0.1,1)] ${showMobileInfo ? '-translate-x-full' : 'translate-x-0'} md:translate-x-0`}>
+                {/* Mobile Back Button */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden z-30 w-max">
+                   <button onClick={() => setShowMobileInfo(false)} className="px-6 py-3 rounded-full bg-white text-slate-950 shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:bg-slate-200 flex items-center gap-2 font-semibold transition-colors">
+                     <ChevronLeft className="w-5 h-5" /> Volver a Fotografía
+                   </button>
+                </div>
+                
                 <button 
                   onClick={() => setActiveAppModal(null)}
                   className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors z-20"
@@ -253,8 +295,8 @@ export function ProjectsSection() {
                 </p>
                 
                 <div className="bg-slate-950/50 p-6 rounded-xl border border-white/5 mt-auto">
-                  <h5 className="text-white font-medium mb-2">Información Técnica</h5>
-                  <p className="text-sm text-slate-400">Esta sección se renderiza utilizando componentes nativos emulados por Ionic, garantizando transiciones suaves en dispositivos Android y un consumo mínimo de recursos en la versión de escritorio gracias a Tauri.</p>
+                  <h5 className="text-white font-medium mb-2">Detalles de Arquitectura</h5>
+                  <p className="text-sm text-slate-400">Desarrollado con React 18, Tailwind CSS y Supabase. Preparado para distribución universal (PWA, Android vía Capacitor y Desktop vía Tauri), garantizando flexibilidad y velocidad en el manejo de operaciones diarias.</p>
                 </div>
 
                 {/* Controles de Navegación del Modal */}
