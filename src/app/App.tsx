@@ -9,6 +9,7 @@ import { SkillsSection } from './components/skills-section';
 import { ProjectsSection } from './components/projects-section';
 import { WorkflowSection } from './components/workflow-section';
 import { PricingSection } from './components/pricing-section';
+import { BusinessHoursSection } from './components/business-hours-section';
 import { ContactSection } from './components/contact-section';
 import { Footer } from './components/footer';
 
@@ -72,6 +73,7 @@ export default function App() {
       <Hero />
       <AboutMe />
       <ServicesSection />
+      <BusinessHoursSection />
       <SkillsSection />
       <ProjectsSection />
       <WorkflowSection />

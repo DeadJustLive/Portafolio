@@ -17,6 +17,7 @@ const appTabs: AppTab[] = [
   { id: 'MenuEdicionPublicaciones_01', title: 'Gestión de Inmuebles', desc: 'Formularios avanzados para edición de propiedades, con borradores locales y persistencia de datos.', icon: Layers },
   { id: 'Inbox', title: 'Inbox Colaborativo', desc: 'CRM integrado para gestionar consultas y comunicación centralizada con los prospectos.', icon: MessageSquare },
   { id: 'testimonios', title: 'Testimonios', desc: 'Gestión y moderación de reseñas para publicar de forma dinámica en la plataforma web.', icon: Star },
+  { id: 'dashboard', title: 'Dashboard', desc: 'Panel de control con métricas clave, estadísticas en tiempo real y vista general del rendimiento.', icon: LayoutDashboard },
   { id: 'Configuracion_basica', title: 'Configuraciones e IA', desc: 'Ajustes globales, herramientas para generación de copywriting y hashtags con Inteligencia Artificial, e integraciones.', icon: Settings },
 ];
 
@@ -25,6 +26,7 @@ export function ProjectsSection() {
   const [activeAppModal, setActiveAppModal] = useState<AppTab | null>(null);
   const [imageError, setImageError] = useState<Record<string, boolean>>({});
   const [showMobileInfo, setShowMobileInfo] = useState(false);
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
   const activeModalIndex = activeAppModal ? appTabs.findIndex(t => t.id === activeAppModal.id) : -1;
   const goPrevModal = (e: React.MouseEvent) => {
@@ -44,10 +46,13 @@ export function ProjectsSection() {
   useEffect(() => {
     if (activeAppModal) {
       document.body.style.overflow = 'hidden';
-      setShowMobileInfo(false); // Reset mobile view to show image first
+      // En móvil: No reseteamos showMobileInfo aquí para permitir una transición suave
+      // al cambiar de sección mientras se está viendo la información.
     } else {
       document.body.style.overflow = '';
+      setShowMobileInfo(false); // Solo se resetea al cerrar el modal por completo
     }
+    setCarouselIndex(0); // Resetear el carrusel al cambiar de tab
   }, [activeAppModal]);
 
   useEffect(() => {
@@ -234,16 +239,39 @@ export function ProjectsSection() {
 
                 {/* Content: Sequence vs Single */}
                 {activeAppModal.id === 'MenuEdicionPublicaciones_01' ? (
-                  <div className="absolute inset-0 overflow-y-auto p-4 pt-20 md:p-8 flex flex-col gap-8 items-center custom-scrollbar w-full">
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
-                      <img 
-                        key={`MenuEdicionPublicaciones_0${num}`}
-                        src={`${import.meta.env.BASE_URL}SC_Propiedades/AppMobil/MenuEdicionPublicaciones_0${num}.png`} 
-                        alt={`${activeAppModal.title} ${num}`}
-                        className="w-full max-w-md h-auto object-contain rounded-xl drop-shadow-2xl"
-                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                      />
-                    ))}
+                  <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 pt-20 md:p-8">
+                    <img 
+                      key={`MenuEdicionPublicaciones_0${carouselIndex + 1}`}
+                      src={`${import.meta.env.BASE_URL}SC_Propiedades/AppMobil/MenuEdicionPublicaciones_0${carouselIndex + 1}.png`} 
+                      alt={`${activeAppModal.title} ${carouselIndex + 1}`}
+                      className="w-full max-w-2xl max-h-[70vh] md:max-h-[85vh] object-contain rounded-xl drop-shadow-2xl transition-opacity duration-300"
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                    />
+                    
+                    {/* Indicador y controles tipo carrusel */}
+                    <div className="absolute bottom-6 md:bottom-8 flex items-center gap-4 bg-slate-900/80 p-2.5 rounded-full backdrop-blur-md border border-white/10 shadow-2xl z-20">
+                      <button 
+                        onClick={() => setCarouselIndex(prev => prev > 0 ? prev - 1 : 7)}
+                        className="p-2 rounded-full hover:bg-white/10 text-white transition-colors"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+                      <div className="flex gap-1.5 px-2">
+                        {[1, 2, 3, 4, 5, 6, 7, 8].map((_, idx) => (
+                          <div 
+                            key={idx} 
+                            onClick={() => setCarouselIndex(idx)}
+                            className={`h-2 rounded-full cursor-pointer transition-all duration-300 ${idx === carouselIndex ? 'bg-emerald-400 w-6' : 'bg-white/30 hover:bg-white/50 w-2'}`} 
+                          />
+                        ))}
+                      </div>
+                      <button 
+                        onClick={() => setCarouselIndex(prev => prev < 7 ? prev + 1 : 0)}
+                        className="p-2 rounded-full hover:bg-white/10 text-white transition-colors"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <div className="absolute inset-0 w-full h-full flex items-center justify-center overflow-y-auto custom-scrollbar">
