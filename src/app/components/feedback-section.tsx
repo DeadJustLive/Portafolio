@@ -5,15 +5,51 @@ export function FeedbackSection() {
   const [score, setScore] = useState<number | null>(null);
   const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
-  const handleScoreClick = (num: number) => {
+  const handleScoreClick = async (num: number) => {
     setScore(num);
+    
+    // Si es 10, enviamos inmediatamente porque no hay campo de texto
+    if (num === 10) {
+      try {
+        await fetch('https://formsubmit.co/ajax/matiasretamalbarrera.45@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: `¡Felicidades! Alguien calificó tu Portafolio con 10/10`,
+            Puntaje: '10/10',
+            _template: 'box'
+          })
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Aquí podrías agregar lógica para enviar a un webhook (Discord/Slack/EmailJS)
+    setIsSending(true);
+    
+    try {
+      await fetch('https://formsubmit.co/ajax/matiasretamalbarrera.45@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `Nuevo Feedback de Portafolio: Puntaje ${score}/10`,
+          Puntaje: `${score}/10`,
+          Comentarios: feedback,
+          _template: 'box'
+        })
+      });
+      setSubmitted(true);
+    } catch (error) {
+      // Si falla, mostramos éxito de todos modos para no frustrar al visitante
+      setSubmitted(true);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -57,13 +93,15 @@ export function FeedbackSection() {
                        placeholder="Tu opinión sincera me ayuda muchísimo..."
                        className="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[100px] resize-y"
                        required
+                       disabled={isSending}
                      />
                      <button 
                        type="submit"
-                       className="self-end inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-medium transition-colors"
+                       disabled={isSending}
+                       className="self-end inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white rounded-xl font-medium transition-colors"
                      >
-                       <Send className="w-4 h-4" />
-                       Enviar feedback
+                       <Send className={`w-4 h-4 ${isSending ? 'animate-pulse' : ''}`} />
+                       {isSending ? 'Enviando...' : 'Enviar feedback'}
                      </button>
                    </form>
                 </div>

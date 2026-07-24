@@ -1,0 +1,2500 @@
+{
+  "nodes": [
+    {
+      "label": "Portafolio",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio",
+      "properties": {
+        "isRoot": true
+      },
+      "id": "node_1"
+    },
+    {
+      "label": "src",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src",
+      "id": "node_2"
+    },
+    {
+      "label": "app",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app",
+      "id": "node_3"
+    },
+    {
+      "label": "components",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components",
+      "id": "node_4"
+    },
+    {
+      "label": "demos",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos",
+      "id": "node_5"
+    },
+    {
+      "label": "DailyBiteMockUp",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/DailyBiteMockUp",
+      "id": "node_6"
+    },
+    {
+      "label": "src",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/DailyBiteMockUp/src",
+      "id": "node_7"
+    },
+    {
+      "label": "SaaSMockUP",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP",
+      "id": "node_8"
+    },
+    {
+      "label": "src",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src",
+      "id": "node_9"
+    },
+    {
+      "label": "mobile",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src/mobile",
+      "id": "node_10"
+    },
+    {
+      "label": "shared",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src/shared",
+      "id": "node_11"
+    },
+    {
+      "label": "web",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src/web",
+      "id": "node_12"
+    },
+    {
+      "label": "StockSimpleDemo",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/StockSimpleDemo",
+      "id": "node_13"
+    },
+    {
+      "label": "src",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/StockSimpleDemo/src",
+      "id": "node_14"
+    },
+    {
+      "label": "figma",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/figma",
+      "id": "node_15"
+    },
+    {
+      "label": "ui",
+      "type": "directory",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui",
+      "id": "node_16"
+    },
+    {
+      "label": "postcss.config.mjs",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/postcss.config.mjs",
+      "properties": {
+        "extension": ".mjs",
+        "size": 460,
+        "lines": 16,
+        "category": "code"
+      },
+      "id": "node_17"
+    },
+    {
+      "label": "vite.config.ts",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/vite.config.ts",
+      "properties": {
+        "extension": ".ts",
+        "size": 642,
+        "lines": 24,
+        "category": "code"
+      },
+      "id": "node_18"
+    },
+    {
+      "label": "index.ts",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/index.ts",
+      "properties": {
+        "kind": "module",
+        "limits": [
+          {
+            "lines": 200
+          }
+        ],
+        "contracts": [
+          {
+            "in": null,
+            "out": null
+          }
+        ]
+      },
+      "id": "node_19"
+    },
+    {
+      "label": "main.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/main.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 183,
+        "lines": 7,
+        "category": "code"
+      },
+      "id": "node_20"
+    },
+    {
+      "label": "App.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/App.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2685,
+        "lines": 85,
+        "category": "code"
+      },
+      "id": "node_21"
+    },
+    {
+      "label": "about-me.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/about-me.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 6547,
+        "lines": 125,
+        "category": "code"
+      },
+      "id": "node_22"
+    },
+    {
+      "label": "ai-philosophy.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ai-philosophy.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 6269,
+        "lines": 124,
+        "category": "code"
+      },
+      "id": "node_23"
+    },
+    {
+      "label": "business-hours-section.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/business-hours-section.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 4841,
+        "lines": 101,
+        "category": "code"
+      },
+      "id": "node_24"
+    },
+    {
+      "label": "contact-section.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/contact-section.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2522,
+        "lines": 48,
+        "category": "code"
+      },
+      "id": "node_25"
+    },
+    {
+      "label": "footer.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/footer.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 5961,
+        "lines": 109,
+        "category": "code"
+      },
+      "id": "node_26"
+    },
+    {
+      "label": "hero.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/hero.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 5144,
+        "lines": 161,
+        "category": "code"
+      },
+      "id": "node_27"
+    },
+    {
+      "label": "navigation.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/navigation.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 6513,
+        "lines": 159,
+        "category": "code"
+      },
+      "id": "node_28"
+    },
+    {
+      "label": "pricing-section.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/pricing-section.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 32138,
+        "lines": 493,
+        "category": "code"
+      },
+      "id": "node_29"
+    },
+    {
+      "label": "project-card.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/project-card.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2696,
+        "lines": 88,
+        "category": "code"
+      },
+      "id": "node_30"
+    },
+    {
+      "label": "project-modal.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/project-modal.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 3790,
+        "lines": 104,
+        "category": "code"
+      },
+      "id": "node_31"
+    },
+    {
+      "label": "projects-section.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/projects-section.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 22268,
+        "lines": 359,
+        "category": "code"
+      },
+      "id": "node_32"
+    },
+    {
+      "label": "services-section.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/services-section.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 10887,
+        "lines": 231,
+        "category": "code"
+      },
+      "id": "node_33"
+    },
+    {
+      "label": "skills-section.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/skills-section.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 11792,
+        "lines": 177,
+        "category": "code"
+      },
+      "id": "node_34"
+    },
+    {
+      "label": "workflow-section.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/workflow-section.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 6083,
+        "lines": 155,
+        "category": "code"
+      },
+      "id": "node_35"
+    },
+    {
+      "label": "AppDemoModal.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/AppDemoModal.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 5110,
+        "lines": 105,
+        "category": "code"
+      },
+      "id": "node_36"
+    },
+    {
+      "label": "DailyBiteDemo.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/DailyBiteDemo.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 508,
+        "lines": 20,
+        "category": "code"
+      },
+      "id": "node_37"
+    },
+    {
+      "label": "IframeDemo.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/IframeDemo.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 778,
+        "lines": 20,
+        "category": "code"
+      },
+      "id": "node_38"
+    },
+    {
+      "label": "MarceDemo.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/MarceDemo.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 18616,
+        "lines": 268,
+        "category": "code"
+      },
+      "id": "node_39"
+    },
+    {
+      "label": "PhoneFrame.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/PhoneFrame.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1832,
+        "lines": 44,
+        "category": "code"
+      },
+      "id": "node_40"
+    },
+    {
+      "label": "SaaSDemo.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSDemo.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 8558,
+        "lines": 167,
+        "category": "code"
+      },
+      "id": "node_41"
+    },
+    {
+      "label": "StockSimpleDemo.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/StockSimpleDemo.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 535,
+        "lines": 20,
+        "category": "code"
+      },
+      "id": "node_42"
+    },
+    {
+      "label": "vite.config.ts",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/DailyBiteMockUp/vite.config.ts",
+      "properties": {
+        "extension": ".ts",
+        "size": 221,
+        "lines": 9,
+        "category": "code"
+      },
+      "id": "node_43"
+    },
+    {
+      "label": "App.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/DailyBiteMockUp/src/App.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 56748,
+        "lines": 910,
+        "category": "code"
+      },
+      "id": "node_44"
+    },
+    {
+      "label": "main.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/DailyBiteMockUp/src/main.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 240,
+        "lines": 11,
+        "category": "code"
+      },
+      "id": "node_45"
+    },
+    {
+      "label": "vite.config.ts",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/vite.config.ts",
+      "properties": {
+        "extension": ".ts",
+        "size": 220,
+        "lines": 9,
+        "category": "code"
+      },
+      "id": "node_46"
+    },
+    {
+      "label": "App.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src/App.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2055,
+        "lines": 51,
+        "category": "code"
+      },
+      "id": "node_47"
+    },
+    {
+      "label": "main.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src/main.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 240,
+        "lines": 11,
+        "category": "code"
+      },
+      "id": "node_48"
+    },
+    {
+      "label": "MobileApp.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src/mobile/MobileApp.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 46986,
+        "lines": 622,
+        "category": "code"
+      },
+      "id": "node_49"
+    },
+    {
+      "label": "mockData.ts",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src/shared/mockData.ts",
+      "properties": {
+        "extension": ".ts",
+        "size": 5469,
+        "lines": 167,
+        "category": "code"
+      },
+      "id": "node_50"
+    },
+    {
+      "label": "types.ts",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src/shared/types.ts",
+      "properties": {
+        "extension": ".ts",
+        "size": 505,
+        "lines": 23,
+        "category": "code"
+      },
+      "id": "node_51"
+    },
+    {
+      "label": "WebApp.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/SaaSMockUP/src/web/WebApp.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 34396,
+        "lines": 478,
+        "category": "code"
+      },
+      "id": "node_52"
+    },
+    {
+      "label": "vite.config.ts",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/StockSimpleDemo/vite.config.ts",
+      "properties": {
+        "extension": ".ts",
+        "size": 250,
+        "lines": 12,
+        "category": "code"
+      },
+      "id": "node_53"
+    },
+    {
+      "label": "App.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/StockSimpleDemo/src/App.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 47482,
+        "lines": 767,
+        "category": "code"
+      },
+      "id": "node_54"
+    },
+    {
+      "label": "main.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/demos/StockSimpleDemo/src/main.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 240,
+        "lines": 11,
+        "category": "code"
+      },
+      "id": "node_55"
+    },
+    {
+      "label": "ImageWithFallback.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/figma/ImageWithFallback.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1153,
+        "lines": 28,
+        "category": "code"
+      },
+      "id": "node_56"
+    },
+    {
+      "label": "accordion.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/accordion.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2060,
+        "lines": 67,
+        "category": "code"
+      },
+      "id": "node_57"
+    },
+    {
+      "label": "alert-dialog.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/alert-dialog.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 3866,
+        "lines": 158,
+        "category": "code"
+      },
+      "id": "node_58"
+    },
+    {
+      "label": "alert.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/alert.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1621,
+        "lines": 67,
+        "category": "code"
+      },
+      "id": "node_59"
+    },
+    {
+      "label": "aspect-ratio.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/aspect-ratio.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 284,
+        "lines": 12,
+        "category": "code"
+      },
+      "id": "node_60"
+    },
+    {
+      "label": "avatar.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/avatar.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1104,
+        "lines": 54,
+        "category": "code"
+      },
+      "id": "node_61"
+    },
+    {
+      "label": "badge.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/badge.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1636,
+        "lines": 47,
+        "category": "code"
+      },
+      "id": "node_62"
+    },
+    {
+      "label": "breadcrumb.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/breadcrumb.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2368,
+        "lines": 110,
+        "category": "code"
+      },
+      "id": "node_63"
+    },
+    {
+      "label": "button.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/button.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2106,
+        "lines": 59,
+        "category": "code"
+      },
+      "id": "node_64"
+    },
+    {
+      "label": "calendar.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/calendar.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2913,
+        "lines": 76,
+        "category": "code"
+      },
+      "id": "node_65"
+    },
+    {
+      "label": "card.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/card.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1988,
+        "lines": 93,
+        "category": "code"
+      },
+      "id": "node_66"
+    },
+    {
+      "label": "carousel.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/carousel.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 5606,
+        "lines": 242,
+        "category": "code"
+      },
+      "id": "node_67"
+    },
+    {
+      "label": "chart.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/chart.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 9852,
+        "lines": 354,
+        "category": "code"
+      },
+      "id": "node_68"
+    },
+    {
+      "label": "checkbox.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/checkbox.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1244,
+        "lines": 33,
+        "category": "code"
+      },
+      "id": "node_69"
+    },
+    {
+      "label": "collapsible.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/collapsible.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 806,
+        "lines": 34,
+        "category": "code"
+      },
+      "id": "node_70"
+    },
+    {
+      "label": "command.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/command.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 4662,
+        "lines": 178,
+        "category": "code"
+      },
+      "id": "node_71"
+    },
+    {
+      "label": "context-menu.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/context-menu.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 8251,
+        "lines": 253,
+        "category": "code"
+      },
+      "id": "node_72"
+    },
+    {
+      "label": "dialog.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/dialog.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 3828,
+        "lines": 136,
+        "category": "code"
+      },
+      "id": "node_73"
+    },
+    {
+      "label": "drawer.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/drawer.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 4085,
+        "lines": 133,
+        "category": "code"
+      },
+      "id": "node_74"
+    },
+    {
+      "label": "dropdown-menu.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/dropdown-menu.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 8313,
+        "lines": 258,
+        "category": "code"
+      },
+      "id": "node_75"
+    },
+    {
+      "label": "form.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/form.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 3785,
+        "lines": 169,
+        "category": "code"
+      },
+      "id": "node_76"
+    },
+    {
+      "label": "hover-card.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/hover-card.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1537,
+        "lines": 45,
+        "category": "code"
+      },
+      "id": "node_77"
+    },
+    {
+      "label": "input-otp.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/input-otp.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2282,
+        "lines": 78,
+        "category": "code"
+      },
+      "id": "node_78"
+    },
+    {
+      "label": "input.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/input.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 963,
+        "lines": 22,
+        "category": "code"
+      },
+      "id": "node_79"
+    },
+    {
+      "label": "label.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/label.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 614,
+        "lines": 25,
+        "category": "code"
+      },
+      "id": "node_80"
+    },
+    {
+      "label": "menubar.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/menubar.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 8426,
+        "lines": 277,
+        "category": "code"
+      },
+      "id": "node_81"
+    },
+    {
+      "label": "navigation-menu.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/navigation-menu.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 6684,
+        "lines": 169,
+        "category": "code"
+      },
+      "id": "node_82"
+    },
+    {
+      "label": "pagination.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/pagination.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2709,
+        "lines": 128,
+        "category": "code"
+      },
+      "id": "node_83"
+    },
+    {
+      "label": "popover.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/popover.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1641,
+        "lines": 49,
+        "category": "code"
+      },
+      "id": "node_84"
+    },
+    {
+      "label": "progress.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/progress.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 743,
+        "lines": 32,
+        "category": "code"
+      },
+      "id": "node_85"
+    },
+    {
+      "label": "radio-group.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/radio-group.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1471,
+        "lines": 46,
+        "category": "code"
+      },
+      "id": "node_86"
+    },
+    {
+      "label": "resizable.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/resizable.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2036,
+        "lines": 57,
+        "category": "code"
+      },
+      "id": "node_87"
+    },
+    {
+      "label": "scroll-area.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/scroll-area.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1649,
+        "lines": 59,
+        "category": "code"
+      },
+      "id": "node_88"
+    },
+    {
+      "label": "select.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/select.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 6275,
+        "lines": 190,
+        "category": "code"
+      },
+      "id": "node_89"
+    },
+    {
+      "label": "separator.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/separator.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 707,
+        "lines": 29,
+        "category": "code"
+      },
+      "id": "node_90"
+    },
+    {
+      "label": "sheet.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/sheet.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 4105,
+        "lines": 140,
+        "category": "code"
+      },
+      "id": "node_91"
+    },
+    {
+      "label": "sidebar.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/sidebar.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 21663,
+        "lines": 727,
+        "category": "code"
+      },
+      "id": "node_92"
+    },
+    {
+      "label": "skeleton.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/skeleton.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 275,
+        "lines": 14,
+        "category": "code"
+      },
+      "id": "node_93"
+    },
+    {
+      "label": "slider.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/slider.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2006,
+        "lines": 64,
+        "category": "code"
+      },
+      "id": "node_94"
+    },
+    {
+      "label": "sonner.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/sonner.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 571,
+        "lines": 26,
+        "category": "code"
+      },
+      "id": "node_95"
+    },
+    {
+      "label": "switch.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/switch.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1182,
+        "lines": 32,
+        "category": "code"
+      },
+      "id": "node_96"
+    },
+    {
+      "label": "table.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/table.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 2460,
+        "lines": 117,
+        "category": "code"
+      },
+      "id": "node_97"
+    },
+    {
+      "label": "tabs.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/tabs.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1945,
+        "lines": 67,
+        "category": "code"
+      },
+      "id": "node_98"
+    },
+    {
+      "label": "textarea.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/textarea.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 767,
+        "lines": 19,
+        "category": "code"
+      },
+      "id": "node_99"
+    },
+    {
+      "label": "toggle-group.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/toggle-group.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1920,
+        "lines": 74,
+        "category": "code"
+      },
+      "id": "node_100"
+    },
+    {
+      "label": "toggle.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/toggle.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1565,
+        "lines": 48,
+        "category": "code"
+      },
+      "id": "node_101"
+    },
+    {
+      "label": "tooltip.tsx",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/tooltip.tsx",
+      "properties": {
+        "extension": ".tsx",
+        "size": 1897,
+        "lines": 62,
+        "category": "code"
+      },
+      "id": "node_102"
+    },
+    {
+      "label": "use-mobile.ts",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/use-mobile.ts",
+      "properties": {
+        "extension": ".ts",
+        "size": 585,
+        "lines": 22,
+        "category": "code"
+      },
+      "id": "node_103"
+    },
+    {
+      "label": "utils.ts",
+      "type": "file",
+      "filePath": "/home/nodead/Escritorio/Portafolio/src/app/components/ui/utils.ts",
+      "properties": {
+        "extension": ".ts",
+        "size": 169,
+        "lines": 7,
+        "category": "code"
+      },
+      "id": "node_104"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_1",
+      "from": "node_1",
+      "to": "node_2",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_2",
+      "from": "node_2",
+      "to": "node_3",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_3",
+      "from": "node_3",
+      "to": "node_4",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_4",
+      "from": "node_4",
+      "to": "node_5",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_5",
+      "from": "node_5",
+      "to": "node_6",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_6",
+      "from": "node_6",
+      "to": "node_7",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_7",
+      "from": "node_5",
+      "to": "node_8",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_8",
+      "from": "node_8",
+      "to": "node_9",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_9",
+      "from": "node_9",
+      "to": "node_10",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_10",
+      "from": "node_9",
+      "to": "node_11",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_11",
+      "from": "node_9",
+      "to": "node_12",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_12",
+      "from": "node_5",
+      "to": "node_13",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_13",
+      "from": "node_13",
+      "to": "node_14",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_14",
+      "from": "node_4",
+      "to": "node_15",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_15",
+      "from": "node_4",
+      "to": "node_16",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_16",
+      "from": "node_1",
+      "to": "node_17",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_17",
+      "from": "node_1",
+      "to": "node_18",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_18",
+      "from": "node_2",
+      "to": "node_19",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_19",
+      "from": "node_2",
+      "to": "node_20",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_20",
+      "from": "node_3",
+      "to": "node_21",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_21",
+      "from": "node_4",
+      "to": "node_22",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_22",
+      "from": "node_4",
+      "to": "node_23",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_23",
+      "from": "node_4",
+      "to": "node_24",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_24",
+      "from": "node_4",
+      "to": "node_25",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_25",
+      "from": "node_4",
+      "to": "node_26",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_26",
+      "from": "node_4",
+      "to": "node_27",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_27",
+      "from": "node_4",
+      "to": "node_28",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_28",
+      "from": "node_4",
+      "to": "node_29",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_29",
+      "from": "node_4",
+      "to": "node_30",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_30",
+      "from": "node_4",
+      "to": "node_31",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_31",
+      "from": "node_4",
+      "to": "node_32",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_32",
+      "from": "node_4",
+      "to": "node_33",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_33",
+      "from": "node_4",
+      "to": "node_34",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_34",
+      "from": "node_4",
+      "to": "node_35",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_35",
+      "from": "node_5",
+      "to": "node_36",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_36",
+      "from": "node_5",
+      "to": "node_37",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_37",
+      "from": "node_5",
+      "to": "node_38",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_38",
+      "from": "node_5",
+      "to": "node_39",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_39",
+      "from": "node_5",
+      "to": "node_40",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_40",
+      "from": "node_5",
+      "to": "node_41",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_41",
+      "from": "node_5",
+      "to": "node_42",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_42",
+      "from": "node_6",
+      "to": "node_43",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_43",
+      "from": "node_7",
+      "to": "node_44",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_44",
+      "from": "node_7",
+      "to": "node_45",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_45",
+      "from": "node_8",
+      "to": "node_46",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_46",
+      "from": "node_9",
+      "to": "node_47",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_47",
+      "from": "node_9",
+      "to": "node_48",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_48",
+      "from": "node_10",
+      "to": "node_49",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_49",
+      "from": "node_11",
+      "to": "node_50",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_50",
+      "from": "node_11",
+      "to": "node_51",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_51",
+      "from": "node_12",
+      "to": "node_52",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_52",
+      "from": "node_13",
+      "to": "node_53",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_53",
+      "from": "node_14",
+      "to": "node_54",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_54",
+      "from": "node_14",
+      "to": "node_55",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_55",
+      "from": "node_15",
+      "to": "node_56",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_56",
+      "from": "node_16",
+      "to": "node_57",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_57",
+      "from": "node_16",
+      "to": "node_58",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_58",
+      "from": "node_16",
+      "to": "node_59",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_59",
+      "from": "node_16",
+      "to": "node_60",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_60",
+      "from": "node_16",
+      "to": "node_61",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_61",
+      "from": "node_16",
+      "to": "node_62",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_62",
+      "from": "node_16",
+      "to": "node_63",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_63",
+      "from": "node_16",
+      "to": "node_64",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_64",
+      "from": "node_16",
+      "to": "node_65",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_65",
+      "from": "node_16",
+      "to": "node_66",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_66",
+      "from": "node_16",
+      "to": "node_67",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_67",
+      "from": "node_16",
+      "to": "node_68",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_68",
+      "from": "node_16",
+      "to": "node_69",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_69",
+      "from": "node_16",
+      "to": "node_70",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_70",
+      "from": "node_16",
+      "to": "node_71",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_71",
+      "from": "node_16",
+      "to": "node_72",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_72",
+      "from": "node_16",
+      "to": "node_73",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_73",
+      "from": "node_16",
+      "to": "node_74",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_74",
+      "from": "node_16",
+      "to": "node_75",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_75",
+      "from": "node_16",
+      "to": "node_76",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_76",
+      "from": "node_16",
+      "to": "node_77",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_77",
+      "from": "node_16",
+      "to": "node_78",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_78",
+      "from": "node_16",
+      "to": "node_79",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_79",
+      "from": "node_16",
+      "to": "node_80",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_80",
+      "from": "node_16",
+      "to": "node_81",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_81",
+      "from": "node_16",
+      "to": "node_82",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_82",
+      "from": "node_16",
+      "to": "node_83",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_83",
+      "from": "node_16",
+      "to": "node_84",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_84",
+      "from": "node_16",
+      "to": "node_85",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_85",
+      "from": "node_16",
+      "to": "node_86",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_86",
+      "from": "node_16",
+      "to": "node_87",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_87",
+      "from": "node_16",
+      "to": "node_88",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_88",
+      "from": "node_16",
+      "to": "node_89",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_89",
+      "from": "node_16",
+      "to": "node_90",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_90",
+      "from": "node_16",
+      "to": "node_91",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_91",
+      "from": "node_16",
+      "to": "node_92",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_92",
+      "from": "node_16",
+      "to": "node_93",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_93",
+      "from": "node_16",
+      "to": "node_94",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_94",
+      "from": "node_16",
+      "to": "node_95",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_95",
+      "from": "node_16",
+      "to": "node_96",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_96",
+      "from": "node_16",
+      "to": "node_97",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_97",
+      "from": "node_16",
+      "to": "node_98",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_98",
+      "from": "node_16",
+      "to": "node_99",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_99",
+      "from": "node_16",
+      "to": "node_100",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_100",
+      "from": "node_16",
+      "to": "node_101",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_101",
+      "from": "node_16",
+      "to": "node_102",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_102",
+      "from": "node_16",
+      "to": "node_103",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_103",
+      "from": "node_16",
+      "to": "node_104",
+      "relation": "CONTAINS"
+    },
+    {
+      "id": "edge_104",
+      "from": "node_20",
+      "to": "node_21",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "app/App.tsx"
+      }
+    },
+    {
+      "id": "edge_105",
+      "from": "node_21",
+      "to": "node_28",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/navigation"
+      }
+    },
+    {
+      "id": "edge_106",
+      "from": "node_21",
+      "to": "node_27",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/hero"
+      }
+    },
+    {
+      "id": "edge_107",
+      "from": "node_21",
+      "to": "node_22",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/about-me"
+      }
+    },
+    {
+      "id": "edge_108",
+      "from": "node_21",
+      "to": "node_33",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/services-section"
+      }
+    },
+    {
+      "id": "edge_109",
+      "from": "node_21",
+      "to": "node_34",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/skills-section"
+      }
+    },
+    {
+      "id": "edge_110",
+      "from": "node_21",
+      "to": "node_32",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/projects-section"
+      }
+    },
+    {
+      "id": "edge_111",
+      "from": "node_21",
+      "to": "node_35",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/workflow-section"
+      }
+    },
+    {
+      "id": "edge_112",
+      "from": "node_21",
+      "to": "node_29",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/pricing-section"
+      }
+    },
+    {
+      "id": "edge_113",
+      "from": "node_21",
+      "to": "node_24",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/business-hours-section"
+      }
+    },
+    {
+      "id": "edge_114",
+      "from": "node_21",
+      "to": "node_25",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/contact-section"
+      }
+    },
+    {
+      "id": "edge_115",
+      "from": "node_21",
+      "to": "node_26",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "components/footer"
+      }
+    },
+    {
+      "id": "edge_116",
+      "from": "node_31",
+      "to": "node_73",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "ui/dialog"
+      }
+    },
+    {
+      "id": "edge_117",
+      "from": "node_37",
+      "to": "node_40",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "PhoneFrame"
+      }
+    },
+    {
+      "id": "edge_118",
+      "from": "node_41",
+      "to": "node_40",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "PhoneFrame"
+      }
+    },
+    {
+      "id": "edge_119",
+      "from": "node_42",
+      "to": "node_40",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "PhoneFrame"
+      }
+    },
+    {
+      "id": "edge_120",
+      "from": "node_45",
+      "to": "node_44",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "App"
+      }
+    },
+    {
+      "id": "edge_121",
+      "from": "node_47",
+      "to": "node_50",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "shared/mockData"
+      }
+    },
+    {
+      "id": "edge_122",
+      "from": "node_47",
+      "to": "node_52",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "web/WebApp"
+      }
+    },
+    {
+      "id": "edge_123",
+      "from": "node_47",
+      "to": "node_49",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "mobile/MobileApp"
+      }
+    },
+    {
+      "id": "edge_124",
+      "from": "node_48",
+      "to": "node_47",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "App"
+      }
+    },
+    {
+      "id": "edge_125",
+      "from": "node_55",
+      "to": "node_54",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "App"
+      }
+    },
+    {
+      "id": "edge_126",
+      "from": "node_57",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_127",
+      "from": "node_58",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_128",
+      "from": "node_58",
+      "to": "node_64",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "button"
+      }
+    },
+    {
+      "id": "edge_129",
+      "from": "node_59",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_130",
+      "from": "node_61",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_131",
+      "from": "node_62",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_132",
+      "from": "node_63",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_133",
+      "from": "node_64",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_134",
+      "from": "node_65",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_135",
+      "from": "node_65",
+      "to": "node_64",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "button"
+      }
+    },
+    {
+      "id": "edge_136",
+      "from": "node_66",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_137",
+      "from": "node_67",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_138",
+      "from": "node_67",
+      "to": "node_64",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "button"
+      }
+    },
+    {
+      "id": "edge_139",
+      "from": "node_68",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_140",
+      "from": "node_69",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_141",
+      "from": "node_71",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_142",
+      "from": "node_71",
+      "to": "node_73",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "dialog"
+      }
+    },
+    {
+      "id": "edge_143",
+      "from": "node_72",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_144",
+      "from": "node_73",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_145",
+      "from": "node_74",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_146",
+      "from": "node_75",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_147",
+      "from": "node_76",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_148",
+      "from": "node_76",
+      "to": "node_80",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "label"
+      }
+    },
+    {
+      "id": "edge_149",
+      "from": "node_77",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_150",
+      "from": "node_78",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_151",
+      "from": "node_79",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_152",
+      "from": "node_80",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_153",
+      "from": "node_81",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_154",
+      "from": "node_82",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_155",
+      "from": "node_83",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_156",
+      "from": "node_83",
+      "to": "node_64",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "button"
+      }
+    },
+    {
+      "id": "edge_157",
+      "from": "node_84",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_158",
+      "from": "node_85",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_159",
+      "from": "node_86",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_160",
+      "from": "node_87",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_161",
+      "from": "node_88",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_162",
+      "from": "node_89",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_163",
+      "from": "node_90",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_164",
+      "from": "node_91",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_165",
+      "from": "node_92",
+      "to": "node_103",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "use-mobile"
+      }
+    },
+    {
+      "id": "edge_166",
+      "from": "node_92",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_167",
+      "from": "node_92",
+      "to": "node_64",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "button"
+      }
+    },
+    {
+      "id": "edge_168",
+      "from": "node_92",
+      "to": "node_79",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "input"
+      }
+    },
+    {
+      "id": "edge_169",
+      "from": "node_92",
+      "to": "node_90",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "separator"
+      }
+    },
+    {
+      "id": "edge_170",
+      "from": "node_92",
+      "to": "node_91",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "sheet"
+      }
+    },
+    {
+      "id": "edge_171",
+      "from": "node_92",
+      "to": "node_93",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "skeleton"
+      }
+    },
+    {
+      "id": "edge_172",
+      "from": "node_92",
+      "to": "node_102",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "tooltip"
+      }
+    },
+    {
+      "id": "edge_173",
+      "from": "node_93",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_174",
+      "from": "node_94",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_175",
+      "from": "node_96",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_176",
+      "from": "node_97",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_177",
+      "from": "node_98",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_178",
+      "from": "node_99",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_179",
+      "from": "node_100",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_180",
+      "from": "node_100",
+      "to": "node_101",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "toggle"
+      }
+    },
+    {
+      "id": "edge_181",
+      "from": "node_101",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    },
+    {
+      "id": "edge_182",
+      "from": "node_102",
+      "to": "node_104",
+      "relation": "IMPORTS",
+      "properties": {
+        "importSpec": "utils"
+      }
+    }
+  ],
+  "version": "1.0",
+  "timestamp": 1784915811867
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "opl-core": {
+      "command": "opl",
+      "args": [
+        "mcp",
+        "start"
+      ],
+      "env": {
+        "OPL_PROJECT_ROOT": "."
+      }
+    }
+  }
+}

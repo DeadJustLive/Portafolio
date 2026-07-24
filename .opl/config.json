@@ -1,0 +1,26 @@
+{
+  "project": {
+    "name": "Portafolio",
+    "type": "webapp",
+    "description": "Proyecto OPL creado con opl init",
+    "createdAt": "2026-07-24T17:56:51.841Z"
+  },
+  "workflow": {
+    "phases": [
+      "discovery",
+      "specification",
+      "backlog",
+      "delivery",
+      "close"
+    ],
+    "currentPhase": "discovery"
+  },
+  "features": [],
+  "conventions": {
+    "enforce": [
+      "features/* no debe importar directamente a otros features, solo via shared/",
+      "core/ no debe depender de frameworks externos",
+      "todo @contract debe tener @in y @out definidos"
+    ]
+  }
+}

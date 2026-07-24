@@ -69,11 +69,11 @@ export function Hero() {
         <div className="hero-grid-overlay" />
       </div>
 
-      {/* Top Spacer for exact flex vertical centering */}
-      <div className="flex-1 w-full min-h-[2rem] sm:min-h-[4rem]" />
+      {/* Top Spacer to push content to center */}
+      <div className="w-full flex-1 min-h-[4rem]" />
 
       {/* Main Content */}
-      <div ref={textRef} className="hero-content shrink-0 py-4 sm:py-8">
+      <div ref={textRef} className="hero-content shrink-0 py-8 z-20">
 
         {/* Badge */}
         <div
@@ -92,8 +92,8 @@ export function Hero() {
             marginBottom: 'clamp(0.5rem, 2vh, 1.5rem)',
           }}
         >
-          <span className="hero-title-line">Desarrollando Soluciones</span>
-          <span className="hero-title-gradient text-gradient">de Software Reales</span>
+          <span className="hero-title-line">Ecosistemas Tecnológicos</span>
+          <span className="hero-title-gradient text-gradient">a la medida</span>
         </h1>
 
         {/* Description */}
@@ -104,7 +104,7 @@ export function Hero() {
             marginBottom: 'clamp(1.25rem, 4vh, 3rem)',
           }}
         >
-          Software Engineer Freelance enfocado en construir aplicaciones web y móviles robustas, escalables y orientadas a resultados. Mi trabajo habla por sí mismo.
+          Diseño y desarrollo soluciones de software robustas para empresas que buscan escalar y automatizar sus procesos. Sin plantillas, solo resultados reales.
         </p>
 
         {/* Action Buttons */}
@@ -141,7 +141,7 @@ export function Hero() {
       </div>
 
       {/* Bottom Spacer area for scroll indicator */}
-      <div className="flex-1 flex flex-col items-center justify-center w-full min-h-[6rem] sm:min-h-[10rem] pb-8 sm:pb-12 xl:pb-20 mt-4 sm:mt-8">
+      <div className="w-full flex-1 flex flex-col items-center justify-end pb-8 sm:pb-12 z-20 min-h-[6rem]">
         <div className="hero-scroll-indicator">
           <button
             onClick={() => document.querySelector('#about-me')?.scrollIntoView({ behavior: 'smooth' })}

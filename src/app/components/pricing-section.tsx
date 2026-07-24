@@ -56,7 +56,7 @@ export function PricingSection() {
           
           {/* Tarjeta 1: Web Corporativa */}
           <div className="pricing-card glass-card bg-slate-900/50 rounded-3xl p-8 border border-white/10 hover:border-indigo-500/50 transition-all duration-300 flex flex-col relative overflow-hidden group">
-            <div className="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6 text-indigo-400 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(99,102,241,0.2)]">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6 text-indigo-400 group-hover:scale-110 transition-transform">
               <Laptop className="w-7 h-7" />
             </div>
             <h4 className="text-2xl font-bold text-white mb-2">Presencia Web</h4>
@@ -80,9 +80,9 @@ export function PricingSection() {
           </div>
 
           {/* Tarjeta 2: Software a la Medida (Destacada) */}
-          <div className="pricing-card glass-card bg-slate-900/80 rounded-3xl p-8 border border-emerald-500/50 relative overflow-hidden shadow-[0_0_30px_rgba(16,185,129,0.15)] flex flex-col group transform md:-translate-y-4">
+          <div className="pricing-card glass-card bg-slate-900/80 rounded-3xl p-8 border border-emerald-500/30 hover:border-emerald-500 transition-all duration-300 relative overflow-hidden flex flex-col group transform md:-translate-y-4">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-500" />
-            <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+            <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
               <Building2 className="w-7 h-7" />
             </div>
             <h4 className="text-2xl font-bold text-white mb-2">Desarrollo de Software</h4>
@@ -111,7 +111,7 @@ export function PricingSection() {
 
           {/* Tarjeta 3: Consultoría */}
           <div className="pricing-card glass-card bg-slate-900/50 rounded-3xl p-8 border border-white/10 hover:border-rose-500/50 transition-all duration-300 flex flex-col relative overflow-hidden group">
-            <div className="w-14 h-14 rounded-2xl bg-rose-500/20 flex items-center justify-center mb-6 text-rose-400 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(244,63,94,0.2)]">
+            <div className="w-14 h-14 rounded-2xl bg-rose-500/20 flex items-center justify-center mb-6 text-rose-400 group-hover:scale-110 transition-transform">
               <Wrench className="w-7 h-7" />
             </div>
             <h4 className="text-2xl font-bold text-white mb-2">Consultoría Técnica</h4>
@@ -139,7 +139,7 @@ export function PricingSection() {
         <div className="mt-16 flex flex-col items-center justify-center">
           <a 
             href="#contact" 
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 font-semibold text-white transition-all duration-300 ease-in-out bg-indigo-600 rounded-full overflow-hidden hover:bg-indigo-500 hover:shadow-[0_0_30px_rgba(79,70,229,0.4)]"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 font-semibold text-white transition-all duration-300 ease-in-out bg-indigo-600 rounded-full overflow-hidden hover:bg-indigo-500"
             onClick={(e) => {
               e.preventDefault();
               document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });

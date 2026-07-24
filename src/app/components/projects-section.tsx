@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Layers, Server, Smartphone, CheckCircle2, Home, Search, Phone, LayoutDashboard, MessageSquare, Star, Settings, X, Image as ImageIcon, ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
+import { ExternalLink, Layers, Server, Smartphone, CheckCircle2, Home, Search, Phone, LayoutDashboard, MessageSquare, Star, Settings, X, Image as ImageIcon, ChevronLeft, ChevronRight, ChevronUp, BookOpen } from 'lucide-react';
 import { CaseStudyModal } from './case-study-modal';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,15 +11,19 @@ type AppTab = {
   title: string;
   desc: string;
   icon: any;
+  borderHover: string;
+  bgHover: string;
+  iconBgHover: string;
+  iconColor: string;
 };
 
 const appTabs: AppTab[] = [
-  { id: 'Publicaciones', title: 'Publicaciones', desc: 'CRUD interactivo para gestión completa del catálogo de inmuebles, con vistas tácticas y operacionales.', icon: Home },
-  { id: 'MenuEdicionPublicaciones_01', title: 'Gestión de Inmuebles', desc: 'Formularios avanzados para edición de propiedades, con borradores locales y persistencia de datos.', icon: Layers },
-  { id: 'Inbox', title: 'Inbox Colaborativo', desc: 'CRM integrado para gestionar consultas y comunicación centralizada con los prospectos.', icon: MessageSquare },
-  { id: 'testimonios', title: 'Testimonios', desc: 'Gestión y moderación de reseñas para publicar de forma dinámica en la plataforma web.', icon: Star },
-  { id: 'dashboard', title: 'Dashboard', desc: 'Panel de control con métricas clave, estadísticas en tiempo real y vista general del rendimiento.', icon: LayoutDashboard },
-  { id: 'Configuracion_basica', title: 'Configuraciones e IA', desc: 'Ajustes globales, herramientas para generación de copywriting y hashtags con Inteligencia Artificial, e integraciones.', icon: Settings },
+  { id: 'Publicaciones', title: 'Publicaciones', desc: 'CRUD interactivo para gestión completa del catálogo de inmuebles, con vistas tácticas y operacionales.', icon: Home, borderHover: 'hover:border-emerald-500', bgHover: 'hover:bg-emerald-950/20', iconBgHover: 'group-hover:bg-emerald-500/20', iconColor: 'text-emerald-400' },
+  { id: 'MenuEdicionPublicaciones_01', title: 'Gestión de Inmuebles', desc: 'Formularios avanzados para edición de propiedades, con borradores locales y persistencia de datos.', icon: Layers, borderHover: 'hover:border-indigo-500', bgHover: 'hover:bg-indigo-950/20', iconBgHover: 'group-hover:bg-indigo-500/20', iconColor: 'text-indigo-400' },
+  { id: 'Inbox', title: 'Inbox Colaborativo', desc: 'CRM integrado para gestionar consultas y comunicación centralizada con los prospectos.', icon: MessageSquare, borderHover: 'hover:border-blue-500', bgHover: 'hover:bg-blue-950/20', iconBgHover: 'group-hover:bg-blue-500/20', iconColor: 'text-blue-400' },
+  { id: 'testimonios', title: 'Testimonios', desc: 'Gestión y moderación de reseñas para publicar de forma dinámica en la plataforma web.', icon: Star, borderHover: 'hover:border-amber-500', bgHover: 'hover:bg-amber-950/20', iconBgHover: 'group-hover:bg-amber-500/20', iconColor: 'text-amber-400' },
+  { id: 'dashboard', title: 'Dashboard', desc: 'Panel de control con métricas clave, estadísticas en tiempo real y vista general del rendimiento.', icon: LayoutDashboard, borderHover: 'hover:border-rose-500', bgHover: 'hover:bg-rose-950/20', iconBgHover: 'group-hover:bg-rose-500/20', iconColor: 'text-rose-400' },
+  { id: 'Configuracion_basica', title: 'Configuraciones e IA', desc: 'Ajustes globales, herramientas para generación de copywriting y hashtags con Inteligencia Artificial, e integraciones.', icon: Settings, borderHover: 'hover:border-fuchsia-500', bgHover: 'hover:bg-fuchsia-950/20', iconBgHover: 'group-hover:bg-fuchsia-500/20', iconColor: 'text-fuchsia-400' },
 ];
 
 export function ProjectsSection() {
@@ -97,7 +101,14 @@ export function ProjectsSection() {
         <div className="project-block flex flex-col md:flex-row gap-12 items-center">
           <div className="flex-1 space-y-8">
             <div>
-              <h4 className="text-indigo-400 font-semibold tracking-wider uppercase text-sm mb-2">Web Corporativa</h4>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-emerald-400 font-bold tracking-wider uppercase text-xs border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 rounded-full">
+                  Schmidt Corredores
+                </span>
+                <span className="text-indigo-400 font-semibold tracking-wider uppercase text-sm">
+                  Web Corporativa
+                </span>
+              </div>
               <h3 className="text-4xl font-bold text-white mb-6">Plataforma Web Inmobiliaria</h3>
               <p className="text-lg text-slate-400 leading-relaxed font-light">
                 Desarrollo de una plataforma web completa para una agencia inmobiliaria. Enfocada en la experiencia de usuario, velocidad de carga y SEO, permitiendo a los clientes explorar propiedades de manera intuitiva y contactar a los agentes con facilidad.
@@ -203,10 +214,10 @@ export function ProjectsSection() {
                 <div 
                   key={tab.id}
                   onClick={() => setActiveAppModal(tab)}
-                  className="aspect-square rounded-2xl glass border border-white/10 hover:border-emerald-500/50 bg-slate-900/50 hover:bg-emerald-950/30 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 group shadow-lg hover:shadow-emerald-900/20"
+                  className={`aspect-square rounded-2xl glass border border-white/10 ${tab.borderHover} bg-slate-900/50 ${tab.bgHover} flex flex-col items-center justify-center cursor-pointer transition-colors duration-300 group`}
                 >
-                  <div className="w-14 h-14 rounded-full bg-slate-800 group-hover:bg-emerald-500/20 flex items-center justify-center mb-3 transition-colors">
-                    <tab.icon className="w-7 h-7 text-slate-400 group-hover:text-emerald-400 transition-colors" />
+                  <div className={`w-14 h-14 rounded-full bg-slate-800 ${tab.iconBgHover} flex items-center justify-center mb-3 transition-colors`}>
+                    <tab.icon className={`w-7 h-7 ${tab.iconColor} transition-colors`} />
                   </div>
                   <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">{tab.title}</span>
                 </div>
@@ -218,47 +229,65 @@ export function ProjectsSection() {
 
       {/* App Tab Detail Modal */}
       <div 
-        className={`fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 transition-all duration-300 ${activeAppModal ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 z-[100] flex items-center justify-center md:p-8 transition-all duration-300 ${activeAppModal ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       >
         <div 
-          className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
+          className="absolute inset-0 bg-slate-950/90 backdrop-blur-md"
           onClick={() => setActiveAppModal(null)}
         />
         
         <div 
-          className={`glass-card bg-slate-900 border border-white/10 rounded-3xl w-full max-w-5xl max-h-[90vh] overflow-hidden relative z-10 shadow-2xl flex flex-row transition-all duration-500 delay-100 ${activeAppModal ? 'translate-y-0 scale-100' : 'translate-y-10 scale-95'}`}
+          className={`glass-card bg-slate-900 border border-white/10 md:rounded-3xl w-full h-full md:h-auto md:max-w-5xl md:max-h-[90vh] overflow-hidden relative z-10 shadow-2xl flex flex-col md:flex-row transition-all duration-500 delay-100 ${activeAppModal ? 'translate-y-0 scale-100' : 'translate-y-10 scale-95'}`}
         >
           {activeAppModal && (
             <>
               {/* Photo Area in Modal */}
-              <div className={`w-full shrink-0 md:w-1/2 bg-slate-950 flex flex-col items-center justify-center relative min-h-[75vh] md:min-h-[600px] border-r border-white/10 overflow-hidden transition-transform duration-500 ease-[cubic-bezier(0.3,0,0.1,1)] ${showMobileInfo ? '-translate-x-full' : 'translate-x-0'} md:translate-x-0`}>
+              <div className={`w-full h-full absolute inset-0 md:relative md:w-1/2 bg-slate-950 flex flex-col items-center justify-center border-r border-white/10 overflow-hidden md:min-h-[600px]`}>
                 
-                {/* Floating Buttons on Mobile */}
-                <div className="absolute top-4 right-4 z-20 md:hidden flex items-center gap-3">
-                  <button 
-                    onClick={() => setActiveAppModal(null)}
-                    className="p-2 rounded-full bg-slate-900/80 text-white backdrop-blur-sm border border-white/10 shadow-lg"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                  <button onClick={() => setShowMobileInfo(true)} className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg transition-colors">
-                    <Search className="w-4 h-4" /> Info
-                  </button>
+                {/* Stories Style Progress Bars (Mobile Only) */}
+                <div className="absolute top-4 left-4 right-4 z-30 md:hidden flex gap-1.5 px-2">
+                  {activeAppModal.id === 'MenuEdicionPublicaciones_01' ? (
+                    [1, 2, 3, 4, 5, 6, 7, 8].map((_, idx) => (
+                      <div 
+                        key={idx} 
+                        className={`h-1.5 rounded-full transition-all duration-300 flex-1 ${idx === carouselIndex ? 'bg-emerald-400' : 'bg-white/30'}`} 
+                      />
+                    ))
+                  ) : (
+                    appTabs.map((_, idx) => (
+                      <div 
+                        key={idx} 
+                        className={`h-1.5 rounded-full transition-all duration-300 flex-1 ${idx === activeModalIndex ? 'bg-emerald-400' : 'bg-white/30'}`} 
+                      />
+                    ))
+                  )}
                 </div>
+
+                {/* Close Button Top Right (Mobile & Desktop) */}
+                <button 
+                  onClick={() => setActiveAppModal(null)}
+                  className="absolute top-6 right-6 p-2 rounded-full bg-slate-900/80 hover:bg-white/10 text-white transition-colors z-40 shadow-lg border border-white/10"
+                >
+                  <X className="w-5 h-5" />
+                </button>
 
                 {/* Content: Sequence vs Single */}
                 {activeAppModal.id === 'MenuEdicionPublicaciones_01' ? (
-                  <div className="absolute inset-0 w-full h-full flex items-center justify-center overflow-y-auto custom-scrollbar">
+                  <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+                    {/* Tapping areas for Stories format */}
+                    <div className="absolute top-0 left-0 w-1/2 h-full z-20 md:hidden" onClick={() => setCarouselIndex(prev => prev > 0 ? prev - 1 : 7)} />
+                    <div className="absolute top-0 right-0 w-1/2 h-full z-20 md:hidden" onClick={() => setCarouselIndex(prev => prev < 7 ? prev + 1 : 0)} />
+
                     <img 
                       key={`MenuEdicionPublicaciones_0${carouselIndex + 1}`}
                       src={`${import.meta.env.BASE_URL}SC_Propiedades/AppMobil/MenuEdicionPublicaciones_0${carouselIndex + 1}.png`} 
                       alt={`${activeAppModal.title} ${carouselIndex + 1}`}
-                      className="absolute inset-0 w-full h-full object-contain p-4 md:p-8 pt-20 md:pt-8 drop-shadow-2xl m-auto z-10 transition-opacity duration-300"
+                      className="absolute inset-0 w-full h-full object-contain p-2 pt-16 pb-24 md:p-8 md:pt-8 drop-shadow-2xl m-auto z-10 transition-opacity duration-300"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                     />
                     
-                    {/* Indicador y controles tipo carrusel */}
-                    <div className="absolute bottom-6 md:bottom-8 flex items-center gap-4 bg-slate-900/80 p-2.5 rounded-full backdrop-blur-md border border-white/10 shadow-2xl z-20">
+                    {/* Desktop Carousel Controls */}
+                    <div className="hidden md:flex absolute bottom-8 items-center gap-4 bg-slate-900/80 p-2.5 rounded-full backdrop-blur-md border border-white/10 shadow-2xl z-20">
                       <button 
                         onClick={() => setCarouselIndex(prev => prev > 0 ? prev - 1 : 7)}
                         className="p-2 rounded-full hover:bg-white/10 text-white transition-colors"
@@ -283,48 +312,56 @@ export function ProjectsSection() {
                     </div>
                   </div>
                 ) : (
-                  <div className="absolute inset-0 w-full h-full flex items-center justify-center overflow-y-auto custom-scrollbar">
+                  <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+                    {/* Tapping areas for Stories format */}
+                    <div className="absolute top-0 left-0 w-1/2 h-full z-20 md:hidden" onClick={goPrevModal} />
+                    <div className="absolute top-0 right-0 w-1/2 h-full z-20 md:hidden" onClick={goNextModal} />
+
                     {!imageError[activeAppModal.id] && (
                       <img 
                         key={activeAppModal.id}
                         src={`${import.meta.env.BASE_URL}SC_Propiedades/AppMobil/${activeAppModal.id}.png`} 
                         alt={activeAppModal.title}
-                        className="absolute inset-0 w-full h-full object-contain p-4 md:p-8 pt-20 md:pt-8 drop-shadow-2xl m-auto z-10"
+                        className="absolute inset-0 w-full h-full object-contain p-2 pt-16 pb-24 md:p-8 md:pt-8 drop-shadow-2xl m-auto z-10"
                         onError={() => setImageError(prev => ({ ...prev, [activeAppModal.id]: true }))}
                       />
                     )}
                     {imageError[activeAppModal.id] && (
-                      <div className="flex flex-col items-center justify-center text-slate-500 w-full h-full min-h-[300px] pt-16">
+                      <div className="flex flex-col items-center justify-center text-slate-500 w-full h-full pt-16">
                         <ImageIcon className="w-16 h-16 mb-4 opacity-30" />
-                        <span className="text-lg font-medium text-center px-4">Fotografía de la App <br/> (Falta {import.meta.env.BASE_URL}SC_Propiedades/AppMobil/{activeAppModal.id}.png)</span>
-                        <span className="text-sm text-slate-600 mt-2">({activeAppModal.title})</span>
+                        <span className="text-lg font-medium text-center px-4">Fotografía no encontrada</span>
                       </div>
                     )}
                   </div>
                 )}
+
+                {/* Mobile Floating Button (TikTok Style) */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 md:hidden">
+                  <button onClick={() => setShowMobileInfo(true)} className="px-6 py-3 bg-slate-900/90 text-white border border-white/10 backdrop-blur-md shadow-2xl rounded-full font-semibold text-sm flex items-center gap-2 animate-bounce">
+                    <ChevronUp className="w-5 h-5" /> Leer Descripción
+                  </button>
+                </div>
               </div>
               
-              {/* Info Area */}
-              <div className={`w-full shrink-0 md:w-1/2 p-8 md:p-12 pb-24 md:pb-12 relative flex flex-col justify-center bg-slate-900/50 overflow-y-auto transition-transform duration-500 ease-[cubic-bezier(0.3,0,0.1,1)] ${showMobileInfo ? '-translate-x-full' : 'translate-x-0'} md:translate-x-0`}>
-                {/* Mobile Back Button */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden z-30 w-max">
-                   <button onClick={() => setShowMobileInfo(false)} className="px-6 py-3 rounded-full bg-white text-slate-950 shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:bg-slate-200 flex items-center gap-2 font-semibold transition-colors">
-                     <ChevronLeft className="w-5 h-5" /> Volver a Fotografía
-                   </button>
+              {/* Invisible Overlay for closing Mobile Info Sheet when clicking outside */}
+              {showMobileInfo && (
+                <div 
+                  className="fixed inset-0 z-40 md:hidden" 
+                  onClick={() => setShowMobileInfo(false)} 
+                />
+              )}
+
+              {/* Info Area (Bottom Sheet on Mobile, Right side on Desktop) */}
+              <div className={`absolute bottom-0 left-0 w-full h-auto max-h-[80vh] rounded-t-3xl md:rounded-none z-50 md:relative md:w-1/2 p-8 md:p-12 pb-12 bg-slate-900 border-t border-white/10 md:border-t-0 overflow-y-auto transform transition-transform duration-500 ease-[cubic-bezier(0.3,0,0.1,1)] ${showMobileInfo ? 'translate-y-0' : 'translate-y-full md:translate-y-0'}`}>
+                
+                {/* Mobile Pull Down Handle */}
+                <div className="w-12 h-1.5 bg-white/20 rounded-full mx-auto mb-6 md:hidden cursor-pointer" onClick={() => setShowMobileInfo(false)} />
+                
+                <div className={`w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center mb-8 shadow-lg shrink-0 ${activeAppModal.iconBgHover.replace('group-hover:', '')}`}>
+                  <activeAppModal.icon className={`w-8 h-8 ${activeAppModal.iconColor}`} />
                 </div>
                 
-                <button 
-                  onClick={() => setActiveAppModal(null)}
-                  className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors z-20"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-                
-                <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-8 shadow-lg shadow-emerald-500/10 shrink-0">
-                  <activeAppModal.icon className="w-8 h-8 text-emerald-400" />
-                </div>
-                
-                <h4 className="text-emerald-400 font-semibold tracking-wider uppercase text-sm mb-2">Vista de la App</h4>
+                <h4 className="text-emerald-400 font-semibold tracking-wider uppercase text-sm mb-2">Módulo</h4>
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">{activeAppModal.title}</h3>
                 
                 <p className="text-slate-300 text-lg leading-relaxed font-light mb-8">
@@ -336,14 +373,14 @@ export function ProjectsSection() {
                   <p className="text-sm text-slate-400">Desarrollado con React 18, Tailwind CSS y Supabase. Preparado para distribución universal (PWA, Android vía Capacitor y Desktop vía Tauri), garantizando flexibilidad y velocidad en el manejo de operaciones diarias.</p>
                 </div>
 
-                {/* Controles de Navegación del Modal */}
-                <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/10">
+                {/* Desktop Navigation Controls */}
+                <div className="hidden md:flex items-center justify-between mt-8 pt-6 border-t border-white/10">
                   <button 
                     onClick={goPrevModal}
                     className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${activeModalIndex > 0 ? 'bg-white/5 hover:bg-white/10 text-white cursor-pointer' : 'opacity-30 cursor-not-allowed text-slate-500'}`}
                   >
                     <ChevronLeft className="w-5 h-5" />
-                    <span className="text-sm font-medium hidden sm:inline">Anterior</span>
+                    <span className="text-sm font-medium">Anterior</span>
                   </button>
                   <div className="flex gap-2">
                     {appTabs.map((_, idx) => (
@@ -368,9 +405,9 @@ export function ProjectsSection() {
         isOpen={activeCaseStudy === 'schmidt'} 
         onClose={() => setActiveCaseStudy(null)}
         title="Plataforma Web Inmobiliaria"
-        problem="La agencia administraba sus propiedades con hojas de cálculo y procesos manuales. Los clientes debían llamar para preguntar sobre disponibilidad, lo que causaba embudos en la atención y pérdida de ventas."
-        challenge="Diseñar un sistema que fuera extremadamente fácil de usar tanto para los agentes inmobiliarios en la gestión de datos, como para los clientes al explorar el catálogo, garantizando tiempos de carga ultrarrápidos para SEO."
-        solution={`Mi enfoque fue crear una plataforma dual:\n\n1. Para el cliente: Una interfaz web optimizada con filtros rápidos y diseño "Mobile First", aumentando la retención en la página.\n2. Para la agencia: Un dashboard (CRUD) personalizado e intuitivo donde pueden actualizar estados, subir fotos y gestionar borradores sin depender de terceros.\n\nResultado: Se redujo el tiempo operativo de la agencia en un 40% y se incrementó la captación de leads digitales gracias a un diseño enfocado en la conversión.`}
+        problem="La agencia operaba sobre una solución web genérica (Wix). Aunque estas herramientas ofrecen facilidades iniciales, terminaron limitando el crecimiento del negocio: interfaces sobrecargadas, funciones innecesarias que causaban ruido, y una carencia total de herramientas operativas reales para gestionar clientes o administrar un gran inventario de propiedades."
+        challenge="Migrar de un sistema 'enlatado' a un ecosistema tecnológico 100% propietario. El desafío era construir una solución que tuviera exactamente las herramientas justas (ni más, ni menos): una vitrina pública de alta velocidad orientada a conversiones y un sistema interno que simplificara el día a día de los corredores."
+        solution={`Reemplacé la plantilla genérica diseñando una arquitectura dividida en dos frentes, conectados por una base de datos centralizada (Supabase):\n\n1. Vitrina Pública (React/Vite): Un portal inmobiliario limpio y estructurado, enfocado exclusivamente en la velocidad, usabilidad (UX) y captación de prospectos, eliminando todo el peso muerto del antiguo sitio Wix.\n2. Ecosistema Interno (PWA / CRM): Una aplicación a la medida instalable en celulares (Capacitor) y escritorio (Tauri). Doté a la agencia con las utilidades exactas que solicitaron: un gestor de propiedades con guardado de borradores offline, un inbox colaborativo, y una automatización clave: la capacidad de crear la ficha de una propiedad e instantáneamente generar y publicarla en Instagram desde la misma aplicación, fusionando dos tareas manuales en un solo clic.\n\nResultado: La agencia recuperó el control de su tecnología. Ahora operan con un software que se adapta a su forma de trabajar (y no al revés), agilizando su gestión interna y proyectando una imagen sumamente profesional hacia sus clientes.`}
       />
     </section>
   );
