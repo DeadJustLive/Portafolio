@@ -11,6 +11,7 @@ import { WorkflowSection } from './components/workflow-section';
 import { PricingSection } from './components/pricing-section';
 import { BusinessHoursSection } from './components/business-hours-section';
 import { ContactSection } from './components/contact-section';
+import { FeedbackSection } from './components/feedback-section';
 import { Footer } from './components/footer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -79,6 +80,7 @@ export default function App() {
       <WorkflowSection />
       <PricingSection />
       <ContactSection />
+      <FeedbackSection />
       <Footer />
     </div>
   );

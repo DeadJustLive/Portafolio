@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Layers, Server, Smartphone, CheckCircle2, Home, Search, Phone, LayoutDashboard, MessageSquare, Star, Settings, X, Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, Layers, Server, Smartphone, CheckCircle2, Home, Search, Phone, LayoutDashboard, MessageSquare, Star, Settings, X, Image as ImageIcon, ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
+import { CaseStudyModal } from './case-study-modal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +28,7 @@ export function ProjectsSection() {
   const [imageError, setImageError] = useState<Record<string, boolean>>({});
   const [showMobileInfo, setShowMobileInfo] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [activeCaseStudy, setActiveCaseStudy] = useState<string | null>(null);
 
   const activeModalIndex = activeAppModal ? appTabs.findIndex(t => t.id === activeAppModal.id) : -1;
   const goPrevModal = (e: React.MouseEvent) => {
@@ -121,11 +123,18 @@ export function ProjectsSection() {
                 <span className="text-sm font-medium text-slate-200">Node.js</span>
               </div>
             </div>
-            <div className="pt-4">
+            <div className="pt-4 flex flex-wrap gap-4">
               <a href="https://www.schmidtcorredores.cl" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-colors">
                 <ExternalLink className="w-5 h-5" />
                 Visitar Sitio Web
               </a>
+              <button 
+                onClick={() => setActiveCaseStudy('schmidt')}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border border-white/10 hover:bg-white/10 text-white font-medium transition-colors"
+              >
+                <BookOpen className="w-5 h-5" />
+                Caso de Estudio
+              </button>
             </div>
           </div>
           <div className="flex-1 w-full relative">
@@ -239,12 +248,12 @@ export function ProjectsSection() {
 
                 {/* Content: Sequence vs Single */}
                 {activeAppModal.id === 'MenuEdicionPublicaciones_01' ? (
-                  <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 pt-20 md:p-8">
+                  <div className="absolute inset-0 w-full h-full flex items-center justify-center overflow-y-auto custom-scrollbar">
                     <img 
                       key={`MenuEdicionPublicaciones_0${carouselIndex + 1}`}
                       src={`${import.meta.env.BASE_URL}SC_Propiedades/AppMobil/MenuEdicionPublicaciones_0${carouselIndex + 1}.png`} 
                       alt={`${activeAppModal.title} ${carouselIndex + 1}`}
-                      className="w-full max-w-2xl max-h-[70vh] md:max-h-[85vh] object-contain rounded-xl drop-shadow-2xl transition-opacity duration-300"
+                      className="absolute inset-0 w-full h-full object-contain p-4 md:p-8 pt-20 md:pt-8 drop-shadow-2xl m-auto z-10 transition-opacity duration-300"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                     />
                     
@@ -354,6 +363,15 @@ export function ProjectsSection() {
           )}
         </div>
       </div>
+
+      <CaseStudyModal 
+        isOpen={activeCaseStudy === 'schmidt'} 
+        onClose={() => setActiveCaseStudy(null)}
+        title="Plataforma Web Inmobiliaria"
+        problem="La agencia administraba sus propiedades con hojas de cálculo y procesos manuales. Los clientes debían llamar para preguntar sobre disponibilidad, lo que causaba embudos en la atención y pérdida de ventas."
+        challenge="Diseñar un sistema que fuera extremadamente fácil de usar tanto para los agentes inmobiliarios en la gestión de datos, como para los clientes al explorar el catálogo, garantizando tiempos de carga ultrarrápidos para SEO."
+        solution={`Mi enfoque fue crear una plataforma dual:\n\n1. Para el cliente: Una interfaz web optimizada con filtros rápidos y diseño "Mobile First", aumentando la retención en la página.\n2. Para la agencia: Un dashboard (CRUD) personalizado e intuitivo donde pueden actualizar estados, subir fotos y gestionar borradores sin depender de terceros.\n\nResultado: Se redujo el tiempo operativo de la agencia en un 40% y se incrementó la captación de leads digitales gracias a un diseño enfocado en la conversión.`}
+      />
     </section>
   );
 }
